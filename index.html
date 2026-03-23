@@ -737,10 +737,115 @@ When a student [specific action or input], follow this procedure:</pre>
 </div>
 
 <!-- ==========================================
-     SLIDE 29 — SECTION DIVIDER: HANDS-ON
+     SLIDE 29 — SECTION DIVIDER: TOOLS
      ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 29: Part IV - Hands-On" data-slide="part4" tabindex="-1">
+<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 29: Tools in Open WebUI" data-slide="tools-intro" tabindex="-1">
   <span class="section-label">Part IV</span>
+  <h2>Tools in Open WebUI</h2>
+  <p class="divider-sub">Extending what the model can <em>do</em>, not just how it responds</p>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ==========================================
+     SLIDE 30 — WHAT IS A TOOL?
+     ========================================== -->
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 30: What Is a Tool?" data-slide="what-is-tool" tabindex="-1">
+  <div class="content" style="flex: 0 0 45%;">
+    <span class="label label-cyan">The Other Half</span>
+    <h2>What Is a Tool?</h2>
+    <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a procedure you write in plain language. A <strong>tool</strong> is a capability the model can call on during a conversation &mdash; searching the web, querying your knowledge collection, executing code, or generating an image.</p>
+    <blockquote>Skills tell the model <strong>how to respond</strong>. Tools give it <strong>new abilities</strong> it doesn&rsquo;t have on its own.</blockquote>
+    <div class="tip-box" style="margin-top: 1em;">
+      <p><strong>Where they live:</strong> Tools are managed in <strong>Workspace &rarr; Tools</strong> and can be attached to any model card, just like a knowledge collection.</p>
+    </div>
+  </div>
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vh, 32px) clamp(14px, 1.8vw, 24px); justify-content: center;">
+    <div style="display: flex; flex-direction: column; gap: clamp(10px, 1.5vh, 16px); width: 100%; max-width: 380px; margin: 0 auto;">
+      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px;">
+        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-cyan);">Skill</div>
+        <div class="flow-node-desc" style="font-size: 0.78rem;">&ldquo;Quote the excerpt, name one issue, ask one question&rdquo;</div>
+        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Written by you in plain language</div>
+      </div>
+      <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
+      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px;">
+        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-blue);">Tool</div>
+        <div class="flow-node-desc" style="font-size: 0.78rem;">Search the web, query files, run code, generate images</div>
+        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Built-in or installed from the community library</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================
+     SLIDE 31 — TOOLS WORTH KNOWING
+     ========================================== -->
+<div class="slide layout-grid" role="group" aria-roledescription="slide" aria-label="Slide 31: Tools Worth Knowing" data-slide="tools-grid" tabindex="-1">
+  <h2>Built-In Tools</h2>
+  <p style="max-width: 620px; margin: 0 auto 1em; color: var(--text-muted);">When enabled, the Sandbox models can call these tools automatically during a conversation.</p>
+  <div class="grid-2">
+    <div class="card card-cyan">
+      <h4>Web Search</h4>
+      <p>Search the public web and pull in current information. Useful when a student&rsquo;s question goes beyond your uploaded materials.</p>
+    </div>
+    <div class="card">
+      <h4>Knowledge Query</h4>
+      <p>Search your knowledge collection by content, not just keyword. The model can look up specific passages from your uploaded files mid-conversation.</p>
+    </div>
+    <div class="card card-navy">
+      <h4>Code Execution</h4>
+      <p>Run code in a sandboxed environment. Relevant for data analysis, statistics, or any course where students work with structured data.</p>
+    </div>
+    <div class="card card-cyan">
+      <h4>Image Generation</h4>
+      <p>Generate images from text descriptions. Could support creative assignments, visual brainstorming, or illustrating concepts.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================
+     SLIDE 32 — HOW TO ENABLE TOOLS
+     ========================================== -->
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 32: How to Enable Tools" data-slide="enable-tools" tabindex="-1">
+  <div class="content">
+    <span class="label label-cyan">Two Ways</span>
+    <h2>How to Enable Tools</h2>
+    <p style="margin-bottom: 0.8em;">You can turn tools on per conversation or attach them permanently to a model card.</p>
+    <div class="card card-cyan" style="margin-bottom: 0.6em;">
+      <h4>Per Chat</h4>
+      <p>Click the <strong>+</strong> icon in the message input area. Toggle the tools you want for that conversation. Good for experimenting.</p>
+    </div>
+    <div class="card" style="margin-bottom: 0.6em;">
+      <h4>Per Model</h4>
+      <p>Open your model card in <strong>Workspace &rarr; Models</strong>. Check the tools you want in the <strong>Tools</strong> section and save. Every conversation with that model will have access.</p>
+    </div>
+    <div class="tip-box">
+      <p><strong>Community tools:</strong> The Sandbox includes built-in tools, but additional tools can be imported from the <strong>Open WebUI community library</strong>. Ask your Sandbox admin about what&rsquo;s available.</p>
+    </div>
+  </div>
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vw, 32px); justify-content: center;">
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.8vh, 20px); width: 100%; max-width: 380px; margin: 0 auto;">
+      <!-- Per chat -->
+      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px;">
+        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-cyan);">Per Chat</div>
+        <div class="flow-node-desc" style="font-size: 0.78rem;">Click <strong>+</strong> in the message bar &rarr; toggle tools on</div>
+        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Active for this conversation only</div>
+      </div>
+      <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">or</div>
+      <!-- Per model -->
+      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px;">
+        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-blue);">Per Model</div>
+        <div class="flow-node-desc" style="font-size: 0.78rem;">Workspace &rarr; Models &rarr; check tools &rarr; Save</div>
+        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Active for every conversation with this model</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================
+     SLIDE 33 — SECTION DIVIDER: HANDS-ON
+     ========================================== -->
+<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 33: Part V - Hands-On" data-slide="part5" tabindex="-1">
+  <span class="section-label">Part V</span>
   <h2>Write Your First Skill</h2>
   <p class="divider-sub">Pick one pedagogical move from your course and turn it into a step-by-step recipe.</p>
   <div class="divider-line"></div>
