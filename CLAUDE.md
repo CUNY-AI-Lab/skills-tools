@@ -71,7 +71,7 @@ Core presentation framework. Manages slide transitions, step-reveal progressions
 ### Responsive Strategy
 Viewport-relative units via `clamp()` throughout. Breakpoints at 1024px (tablet) and 768px (mobile) in `responsive.css`. Split layouts stack vertically on mobile.
 
-## Content Structure (33 slides)
+## Content Structure (37 slides)
 
 - **1–3:** Title, roadmap, recap of workshops 1–2
 - **4–6:** What is a skill, why it matters (before/after), the gap skills fill
@@ -80,7 +80,8 @@ Viewport-relative units via `clamp()` throughout. Breakpoints at 1024px (tablet)
 - **15–18:** Literature example — reading cinematic images
 - **19–24:** Building blocks (trigger, procedure, format, constraints) with copyable templates
 - **25–28:** Skills worth building, common pitfalls, where skills live
-- **29–33:** Hands-on exercise, closing
+- **29–32:** Open WebUI Tools — what they are, built-in tools, how to enable per-chat or per-model
+- **33–37:** Hands-on exercise (choose a move, write the skill, add to model), closing
 
 ## Shared Assets
 
