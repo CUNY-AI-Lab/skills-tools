@@ -568,52 +568,45 @@ When a student [specific action or input], follow this procedure:</pre>
 </div>
 
 <!-- ==========================================
-     SLIDE 26 — SKILL IDEAS
+     SLIDE — STRATEGY: SKILLS TO BUILD + PITFALLS
      ========================================== -->
-<div class="slide layout-grid" role="group" aria-roledescription="slide" aria-label="Slide 26: Skills Worth Building" data-slide="skill-ideas" tabindex="-1">
-  <h2>Skills Worth Building</h2>
+<div class="slide layout-grid" role="group" aria-roledescription="slide" aria-label="Strategy: Skills Worth Building and Common Pitfalls" data-slide="strategy" tabindex="-1">
+  <h2>Strategy</h2>
   <div class="grid-2">
     <div class="card card-cyan">
-      <h4>Excerpt-and-Respond Feedback</h4>
-      <p>Quote a passage from the student&rsquo;s draft in a block quote. Name one observation directly below it. Ask one question. Stop.</p>
+      <h4>Excerpt-and-Respond</h4>
+      <p>Quote a passage. Name one observation. Ask one question.</p>
     </div>
     <div class="card">
       <h4>Source-Grounded Q&amp;A</h4>
-      <p>Retrieve and quote from the knowledge collection before answering. Cite the document by name.</p>
+      <p>Retrieve and quote from the knowledge collection before responding.</p>
     </div>
     <div class="card card-navy">
       <h4>Rubric Walk-Through</h4>
-      <p>One criterion at a time. Quote it, ask the student to self-evaluate, discuss before moving on.</p>
+      <p>One criterion at a time. Quote it, ask the student to self-evaluate.</p>
     </div>
     <div class="card card-cyan">
-      <h4>One-Question Concision</h4>
-      <p>Single focused question. No preamble, no list. Force the model to choose what matters most.</p>
+      <h4>One-Question Focus</h4>
+      <p>One focused question &mdash; no list, no preamble.</p>
     </div>
   </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 27 — COMMON PITFALLS
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 27: Common Pitfalls" data-slide="pitfalls" tabindex="-1">
-  <span class="label label-cyan">Watch Out</span>
-  <h2>Common Pitfalls</h2>
-  <div class="grid-2" style="margin-top: 1em;">
+  <h4 class="step-hidden" data-step style="margin-top: 1em; color: var(--accent-red);">Watch Out</h4>
+  <div class="grid-2 step-hidden" data-step>
     <div class="card" style="border-left-color: var(--accent-red);">
-      <h4>Putting Everything in the System Prompt</h4>
-      <p>A long system prompt with embedded procedures confuses the model. Decompose into separate skills. The prompt sets purpose and direction; skills handle specific procedures.</p>
+      <h4>System Prompt Overload</h4>
+      <p>Keep the system prompt brief. Put procedures in separate skills.</p>
     </div>
     <div class="card" style="border-left-color: var(--accent-red);">
       <h4>Skipping the Format</h4>
-      <p>Without a format spec, the model defaults to its own structure. If you want &ldquo;quote then respond,&rdquo; spell it out.</p>
+      <p>If you want &ldquo;quote then respond,&rdquo; spell it out &mdash; the model won&rsquo;t guess.</p>
     </div>
     <div class="card" style="border-left-color: var(--accent-amber);">
       <h4>No Wait Points</h4>
-      <p>If your procedure has five steps, the model may execute all five in one response. Explicit &ldquo;Stop. Wait for the student to respond&rdquo; instructions force turn-taking.</p>
+      <p>Add &ldquo;Stop. Wait for the student&rdquo; between steps to force turn-taking.</p>
     </div>
     <div class="card" style="border-left-color: var(--accent-amber);">
-      <h4>Forgetting the Knowledge Collection</h4>
-      <p>Skills that reference course materials need explicit retrieval instructions. Without them, the model paraphrases or draws on its own training instead of your documents.</p>
+      <h4>Forgetting the Collection</h4>
+      <p>Tell the model to quote from uploaded docs &mdash; otherwise it uses its own training.</p>
     </div>
   </div>
 </div>
@@ -697,45 +690,45 @@ When a student [specific action or input], follow this procedure:</pre>
     <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a document you write in markdown or plain text, whereas a <strong>tool</strong> is code &mdash; a function the model calls to do something it can&rsquo;t do with language alone.</p>
     <div class="card card-cyan" style="margin-bottom: 0.5em;">
       <h4>Per Chat</h4>
-      <p>Click <strong>+</strong> in the message bar and toggle tools on. Good for experimenting.</p>
+      <p>Click <strong>+</strong> in the message bar to toggle individual tools on for that conversation.</p>
     </div>
     <div class="card" style="margin-bottom: 0.5em;">
       <h4>Per Model</h4>
-      <p><strong>Workspace &rarr; Models &rarr; Tools</strong>. Every conversation with that model gets access.</p>
+      <p>Attach tools permanently in <strong>Workspace &rarr; Models &rarr; Tools</strong>.</p>
     </div>
     <div class="tip-box">
-      <p><strong>Caveat:</strong> Smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently. Use a larger model like Kimi K2.5 or GLM 5 for reliable tool use.</p>
+      <p><strong>Caveat:</strong> Smaller models (e.g. Gemma 3 27B) call tools inconsistently. Use Kimi K2.5 or GLM 5 for reliable tool use.</p>
     </div>
   </div>
-  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vh, 32px) clamp(14px, 1.8vw, 24px); justify-content: center;">
-    <div style="display: flex; flex-direction: column; gap: clamp(8px, 1.2vh, 14px); width: 100%; max-width: 380px; margin: 0 auto;">
-      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px;">
-        <div class="flow-node-label" style="font-size: 0.88rem; color: var(--accent-cyan);">Skill <span style="font-weight: 400; font-size: 0.78rem; opacity: 0.7;">(plain text)</span></div>
-        <div class="flow-node-desc" style="font-size: 0.75rem;">&ldquo;Walk through stasis one question at a time&rdquo;</div>
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(24px, 3vh, 40px) clamp(20px, 2.5vw, 36px); justify-content: center;">
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.6vh, 18px); width: 100%; max-width: 480px; margin: 0 auto;">
+      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 16px 18px;">
+        <div class="flow-node-label" style="font-size: 1.05rem; color: var(--accent-cyan);">Skill <span style="font-weight: 400; font-size: 0.88rem; opacity: 0.75;">(plain text)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.9rem;">&ldquo;Walk through stasis one question at a time&rdquo;</div>
       </div>
-      <div style="text-align: center; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
-      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px;">
-        <div class="flow-node-label" style="font-size: 0.88rem; color: var(--accent-blue);">Tool <span style="font-weight: 400; font-size: 0.78rem; opacity: 0.7;">(code)</span></div>
-        <div class="flow-node-desc" style="font-size: 0.75rem;">Search the web, query files, run code, generate images</div>
+      <div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
+      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px; padding: 16px 18px;">
+        <div class="flow-node-label" style="font-size: 1.05rem; color: var(--accent-blue);">Tool <span style="font-weight: 400; font-size: 0.88rem; opacity: 0.75;">(code)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.9rem;">Search the web, query files, run code, generate images</div>
       </div>
-      <div style="border-top: 1px solid rgba(59, 111, 181, 0.15); padding-top: clamp(8px, 1vh, 12px); margin-top: clamp(4px, 0.5vh, 8px);">
-        <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Built-in tools</div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 8px 10px;">
-            <div style="font-size: 0.78rem; font-weight: 600;">Web Search</div>
-            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 2px;">Current information beyond your uploads</div>
+      <div style="border-top: 1px solid rgba(59, 111, 181, 0.15); padding-top: clamp(12px, 1.4vh, 18px); margin-top: clamp(6px, 0.8vh, 12px);">
+        <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Built-in tools</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 12px 14px;">
+            <div style="font-size: 0.92rem; font-weight: 600;">Web Search</div>
+            <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Current information beyond your uploads</div>
           </div>
-          <div style="background: white; border: 1px solid rgba(59, 111, 181, 0.25); border-radius: 8px; padding: 8px 10px;">
-            <div style="font-size: 0.78rem; font-weight: 600;">Knowledge Query</div>
-            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 2px;">Search uploaded files by content</div>
+          <div style="background: white; border: 1px solid rgba(59, 111, 181, 0.25); border-radius: 8px; padding: 12px 14px;">
+            <div style="font-size: 0.92rem; font-weight: 600;">Knowledge Query</div>
+            <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Search uploaded files by content</div>
           </div>
-          <div style="background: white; border: 1px solid rgba(11, 29, 58, 0.2); border-radius: 8px; padding: 8px 10px;">
-            <div style="font-size: 0.78rem; font-weight: 600;">Code Execution</div>
-            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 2px;">Run code in a sandbox</div>
+          <div style="background: white; border: 1px solid rgba(11, 29, 58, 0.2); border-radius: 8px; padding: 12px 14px;">
+            <div style="font-size: 0.92rem; font-weight: 600;">Code Execution</div>
+            <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Run code in a sandbox</div>
           </div>
-          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 8px 10px;">
-            <div style="font-size: 0.78rem; font-weight: 600;">Image Generation</div>
-            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 2px;">Create images from descriptions</div>
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 12px 14px;">
+            <div style="font-size: 0.92rem; font-weight: 600;">Image Generation</div>
+            <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Create images from descriptions</div>
           </div>
         </div>
       </div>
@@ -759,23 +752,23 @@ When a student [specific action or input], follow this procedure:</pre>
 <div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 30: Choose Your Move" data-slide="exercise-choose" tabindex="-1" style="justify-content: center; align-items: center; text-align: center;">
   <span class="label label-cyan">Exercise</span>
   <h2>Choose Your Move</h2>
-  <p style="margin-bottom: 1em; max-width: 620px; margin-left: auto; margin-right: auto;">Which of these is closest to the skill you want to build?</p>
+  <p style="margin-bottom: 1em; max-width: 620px; margin-left: auto; margin-right: auto;">Which is closest to the skill you want to build?</p>
   <div class="grid-2" style="max-width: 620px; margin: 0 auto; text-align: left;">
     <div class="card card-cyan" style="margin-bottom: 0;">
-      <h4>Feedback on Writing</h4>
-      <p>Quote a passage, name what you notice, ask a question</p>
+      <h4>Establishing Stasis</h4>
+      <p>Four stases, one per turn</p>
     </div>
     <div class="card" style="margin-bottom: 0;">
-      <h4>Source Analysis</h4>
-      <p>Walk through a framework one question at a time</p>
+      <h4>Sourcing a Document</h4>
+      <p>Quote, then ask who, when, for whom</p>
     </div>
     <div class="card card-navy" style="margin-bottom: 0;">
-      <h4>Visual / Image Reading</h4>
-      <p>Guide description, then analysis, then interpretation</p>
+      <h4>Reading the Frame</h4>
+      <p>Describe &rarr; analyze &rarr; interpret</p>
     </div>
     <div class="card card-cyan" style="margin-bottom: 0;">
       <h4>Something Else</h4>
-      <p>Any instructor move that needs a step-by-step recipe</p>
+      <p>Any repeatable pedagogical move</p>
     </div>
   </div>
 </div>
@@ -837,50 +830,50 @@ Constraints:
   <div class="content">
     <span class="label label-cyan">Integrate It</span>
     <h2>Add Your Skill</h2>
-    <p style="margin-bottom: 0.8em;">Add the skill to your model.</p>
-    <div class="card card-cyan step-hidden" data-step="1" style="margin-bottom: 0.5em;">
-      <h4>Option A: Append to System Prompt</h4>
-      <p>Open your model card in <strong>Workspace &rarr; Models</strong>. Paste the skill at the end of your system prompt, after a blank line. Save.</p>
+    <p style="margin-bottom: 0.8em;">Connect the skill you wrote to the model you built in the previous workshops.</p>
+    <div class="card card-cyan" style="margin-bottom: 0.5em;">
+      <h4>Option A: Paste into System Prompt</h4>
+      <p><strong>Workspace &rarr; Models</strong>. Paste the skill at the end of your system prompt. Save.</p>
     </div>
-    <div class="card step-hidden" data-step="2" style="margin-bottom: 0.5em;">
-      <h4>Option B: Upload to Knowledge Collection</h4>
-      <p>Save your skill as a <code>.txt</code> file (e.g., <em>feedback-skill.txt</em>). Upload it to your knowledge collection in <strong>Workspace &rarr; Knowledge</strong>.</p>
+    <div class="card" style="margin-bottom: 0.5em;">
+      <h4>Option B: Upload as .txt</h4>
+      <p>Save the skill as a <code>.txt</code> file. Upload to <strong>Workspace &rarr; Knowledge</strong>.</p>
     </div>
-    <div class="card card-navy step-hidden" data-step="3" style="margin-bottom: 0.5em;">
-      <h4>Test it</h4>
-      <p>Open a new chat with your model. Trigger the skill with a realistic student input. Does it follow the procedure? Does the format match?</p>
+    <div class="card card-navy step-hidden" data-step style="margin-bottom: 0.5em;">
+      <h4>Test It</h4>
+      <p>Open a new chat. Trigger the skill with realistic student input. Does it follow the procedure?</p>
     </div>
-    <div class="tip-box step-hidden" data-step="4" style="margin-top: 0.8em;">
-      <p><strong>Iterate:</strong> If the model skips steps, add &ldquo;Stop. Wait for the student.&rdquo; If it dumps everything at once, add &ldquo;One [X] per turn.&rdquo; Skills improve through testing.</p>
+    <div class="tip-box step-hidden" data-step style="margin-top: 0.8em;">
+      <p><strong>Iterate:</strong> If the model skips steps, add wait points. If it dumps everything, add &ldquo;one per turn.&rdquo;</p>
     </div>
   </div>
-  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vw, 32px); justify-content: center;">
-    <div style="display: flex; flex-direction: column; gap: clamp(10px, 1.5vh, 16px); width: 100%; max-width: 380px; margin: 0 auto;">
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(24px, 3vh, 40px) clamp(20px, 2.5vw, 36px); justify-content: center;">
+    <div style="display: flex; flex-direction: column; gap: clamp(10px, 1.5vh, 16px); width: 100%; max-width: 520px; margin: 0 auto;">
       <!-- Layer 1 -->
-      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.04); border: 1.5px solid rgba(78, 205, 196, 0.2); border-radius: 10px;">
-        <div class="flow-node-label" style="font-size: 0.85rem;">System Prompt</div>
-        <div class="flow-node-desc" style="font-size: 0.72rem;">Role, procedure, constraints, tone</div>
+      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.04); border: 1.5px solid rgba(78, 205, 196, 0.2); border-radius: 10px; padding: 18px 22px;">
+        <div class="flow-node-label" style="font-size: 1.25rem;">System Prompt</div>
+        <div class="flow-node-desc" style="font-size: 1rem;">Role, procedure, constraints, tone</div>
       </div>
-      <div style="text-align: center; font-size: 0.7rem; color: var(--text-muted);" aria-hidden="true">+</div>
+      <div style="text-align: center; font-size: 1.1rem; color: var(--text-muted);" aria-hidden="true">+</div>
       <!-- Layer 2 -->
-      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.04); border: 1.5px solid rgba(59, 111, 181, 0.2); border-radius: 10px;">
-        <div class="flow-node-label" style="font-size: 0.85rem;">Knowledge Collection</div>
-        <div class="flow-node-desc" style="font-size: 0.72rem;">Syllabus, rubric, readings, sources</div>
+      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.04); border: 1.5px solid rgba(59, 111, 181, 0.2); border-radius: 10px; padding: 18px 22px;">
+        <div class="flow-node-label" style="font-size: 1.25rem;">Knowledge Collection</div>
+        <div class="flow-node-desc" style="font-size: 1rem;">Syllabus, rubric, readings, sources</div>
       </div>
-      <div style="text-align: center; font-size: 0.7rem; color: var(--text-muted);" aria-hidden="true">+</div>
+      <div style="text-align: center; font-size: 1.1rem; color: var(--text-muted);" aria-hidden="true">+</div>
       <!-- Layer 3 -->
-      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.08); border: 2px solid rgba(78, 205, 196, 0.4); border-radius: 10px; box-shadow: 0 4px 16px rgba(78, 205, 196, 0.08);">
-        <div class="flow-node-label" style="font-size: 0.85rem; color: var(--accent-cyan);">Your Skill</div>
-        <div class="flow-node-desc" style="font-size: 0.72rem;">Step-by-step recipe for a specific move</div>
+      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.08); border: 2px solid rgba(78, 205, 196, 0.4); border-radius: 10px; box-shadow: 0 4px 16px rgba(78, 205, 196, 0.08); padding: 18px 22px;">
+        <div class="flow-node-label" style="font-size: 1.25rem; color: var(--accent-cyan);">Your Skill</div>
+        <div class="flow-node-desc" style="font-size: 1rem;">Step-by-step recipe for a specific move</div>
       </div>
       <div style="text-align: center;" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 20 20" focusable="false"><path d="M10 2 L10 14 M6 10 L10 16 L14 10" stroke="var(--accent-green)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <svg width="32" height="32" viewBox="0 0 20 20" focusable="false"><path d="M10 2 L10 14 M6 10 L10 16 L14 10" stroke="var(--accent-green)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
       </div>
       <!-- Result -->
-      <div class="flow-node" style="width: 100%; background: white; border: 2px solid var(--accent-green); border-radius: 10px;">
-        <div class="flow-node-icon" style="font-size: 1.2rem;" aria-hidden="true">&#9989;</div>
-        <div class="flow-node-label" style="font-size: 0.85rem;">Your Complete AI Tool</div>
-        <div class="flow-node-desc" style="font-size: 0.72rem;">Behavior + sources + workflows</div>
+      <div class="flow-node" style="width: 100%; background: white; border: 2.5px solid var(--accent-green); border-radius: 10px; padding: 18px 22px;">
+        <div class="flow-node-icon" style="font-size: 1.8rem;" aria-hidden="true">&#9989;</div>
+        <div class="flow-node-label" style="font-size: 1.25rem;">Your Complete AI Tool</div>
+        <div class="flow-node-desc" style="font-size: 1rem;">Role + sources + workflows</div>
       </div>
     </div>
   </div>
@@ -896,21 +889,21 @@ Constraints:
     <div class="roadmap-item" style="opacity: 0.65;">
       <div class="week-label">March 16</div>
       <h4>System Prompts &#10003;</h4>
-      <p>Defined how the model responds and scaffolds learning</p>
+      <p>Behavior, constraints, tone</p>
     </div>
     <div class="roadmap-item" style="opacity: 0.65;">
       <div class="week-label">March 23</div>
       <h4>Knowledge Collections &#10003;</h4>
-      <p>Grounded the model in your course materials</p>
+      <p>Grounded in your materials</p>
     </div>
     <div class="roadmap-item" style="opacity: 0.65;">
       <div class="week-label">March 30 (Today)</div>
       <h4>Skills &amp; Tools &#10003;</h4>
-      <p>Added step-by-step workflows for specific pedagogical moves</p>
+      <p>Step-by-step workflows</p>
     </div>
   </div>
-  <p style="color: var(--light-text-50); margin-top: 1.5em; max-width: 620px;">Three layers: a system prompt that sets behavior, a knowledge collection that grounds it in your materials, and skills that teach it specific moves. Keep testing, keep iterating.</p>
-  <p style="color: var(--light-text-50); font-size: 0.9rem; margin-top: 1em;"><a href="https://ailab.gc.cuny.edu" style="color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 3px;">ailab.gc.cuny.edu</a></p>
+  <p style="color: var(--light-text-50); margin-top: 1.2em; max-width: 620px;">Role + sources + workflows: three layers, one tool. Test with real student inputs &mdash; then test again against the base model without the system prompt, knowledge collection, or skill. The difference is the point.</p>
+  <p style="color: var(--light-text-50); font-size: 0.9rem; margin-top: 0.8em;"><a href="https://ailab.gc.cuny.edu" style="color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 3px;">ailab.gc.cuny.edu</a></p>
 </div>
 
 </div><!-- /deck -->
