@@ -25,3 +25,15 @@ Replace emoji HTML entities in diagrams with scalable, animated SVG primitives v
 - [ ] Replace flow-node ✅ with animated check widget
 - [ ] Test at all breakpoints (mobile, tablet, desktop)
 - [ ] Create skill file at `~/.claude/skills/emoji-to-svg-primitives/SKILL.md`
+
+## contextualize tools
+
+Reframe Open WebUI tools content (slides 24–25) so it lands more clearly for workshop audience. Current framing is too abstract — needs concrete before/after examples and clearer connection to the skills they just learned.
+
+## title sweep
+
+Audit all slide titles for consistency — capitalization, phrasing patterns, label usage. Regularize so the deck reads as one voice.
+
+## collapsed slide clarity
+
+Review slides that were collapsed from earlier drafts (skills worth building + pitfalls, progression dots). Ensure the compressed versions still read clearly and nothing essential was lost in the merge.

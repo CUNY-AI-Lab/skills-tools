@@ -1,6 +1,6 @@
 # Customizing Skills & Tools -- Slide Deck Content
 
-> CUNY AI Lab Sandbox Workshop (31 slides)
+> CUNY AI Lab Sandbox Workshop (28 slides)
 > Source: `index.html`
 
 ---
@@ -267,62 +267,29 @@ Template with copy button.
 
 ---
 
-## Slide 22 -- Section Divider: Strategies (`layout-divider`)
+## Slide 22 -- Section Divider: Skills & Tools (`layout-divider`)
 
 **Section label:** Part III
-Strategies & Pitfalls
+Skills & Tools
 
 ---
 
-## Slide 23 -- Strategy (`layout-grid`, step-reveal)
+## Slide 23 -- Where Skills Live (`layout-content`)
 
-**Skills Worth Building (visible on load):**
-- **Excerpt-and-Respond:** Quote a passage. Name one observation. Ask one question.
-- **Source-Grounded Q&A:** Retrieve and quote from the knowledge collection before responding.
-- **Rubric Walk-Through:** One criterion at a time. Quote it, ask the student to self-evaluate.
-- **One-Question Focus:** One focused question -- no list, no preamble.
+**Label:** Skills in Open WebUI
 
-**Watch Out (step-reveal):**
-- **System Prompt Overload:** Keep the system prompt brief. Put procedures in separate skills.
-- **Skipping the Format:** If you want "quote then respond," spell it out -- the model won't guess.
-- **No Wait Points:** Add "Stop. Wait for the student" between steps to force turn-taking.
-- **Forgetting the Collection:** Tell the model to quote from uploaded docs -- otherwise it uses its own training.
+A skill is worth building when the move has a **repeatable structure** -- trigger, steps, output shape -- that you want the model to follow every time.
+
+- **Toggle in the Model Card** -- Open **Workspace → Models**, find your model, and toggle the skill on. It activates automatically in every chat with that model.
+- **Paste at End of System Prompt** -- Copy the skill text and append it to your system prompt. Best when you want a single, always-active workflow.
+
+**Signpost the trigger:** Start your skill with a clear trigger line so the model knows exactly when to activate it -- and so you can tell at a glance which move each skill handles.
 
 ---
 
-## Slide 24 -- Where Skills Live (`layout-split`)
+## Slide 24 -- Skills vs. Tools (`layout-split`)
 
-**Label:** Integration
-
-Skills are attached to a model in Workspace → Models. Once attached, the skill is active for every conversation with that model.
-
-1. **Paste into System Prompt** -- Add the skill at the end of your system prompt. Save.
-2. **Or upload as .txt** -- Save the skill as a `.txt` file. Upload to Workspace → Knowledge.
-
-**Key principle:** If the model should *always* follow the skill, put it in the system prompt. If it should follow the skill only when relevant, put it in the knowledge collection where retrieval handles the routing.
-
-**Stage:** Diagram showing "Always Active" (skill appended to system prompt) vs. "Retrieved When Needed" (skill saved as .txt in knowledge collection)
-
----
-
-## Slide 25 -- Tools: Instruction (`layout-content`)
-
-**Label:** Tools in Open WebUI (progression: 1 of 2)
-
-**Starting Point:** `Enable web search and knowledge query on your model so it can look things up during a conversation. Turn on tools in the model settings or per chat.`
-
-What's missing *(step-reveal)*:
-1. No distinction between skills (plain text you write) and tools (code the model calls)
-2. Doesn't specify *which* tools to enable or why -- turning everything on adds noise
-3. No guidance on model selection: smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently
-4. No connection between tools and the skill that should use them
-5. Student-facing behavior unchanged -- enabling a tool doesn't mean the model knows when to use it
-
----
-
-## Slide 26 -- Skills vs. Tools (`layout-split`)
-
-**Label:** Tools in Open WebUI (progression: 2 of 2)
+**Label:** Tools in Open WebUI
 
 A **skill** is a document you write in markdown or plain text, whereas a **tool** is code -- a function the model calls to do something it can't do with language alone.
 
@@ -335,7 +302,7 @@ A **skill** is a document you write in markdown or plain text, whereas a **tool*
 
 ---
 
-## Slide 27 -- Section Divider: Hands-On (`layout-divider`)
+## Slide 25 -- Section Divider: Hands-On (`layout-divider`)
 
 **Section label:** Part V
 Write Your First Skill
@@ -343,7 +310,7 @@ Pick one pedagogical move from your course and turn it into a step-by-step recip
 
 ---
 
-## Slide 28 -- Choose Your Move (`layout-content`, centered)
+## Slide 26 -- Choose Your Move (`layout-content`, centered)
 
 **Label:** Exercise
 
@@ -356,7 +323,7 @@ Which is closest to the skill you want to build?
 
 ---
 
-## Slide 29 -- Write Your Skill (`layout-split`)
+## Slide 27 -- Write Your Skill (`layout-split`)
 
 **Label:** Draft It
 
@@ -370,7 +337,7 @@ Full template with copy button.
 
 ---
 
-## Slide 30 -- Add Your Skill (`layout-split`)
+## Slide 28 -- Add Your Skill (`layout-split`)
 
 **Label:** Integrate It
 
@@ -387,7 +354,7 @@ Connect the skill you wrote to the model you built in the previous workshops.
 
 ---
 
-## Slide 31 -- Workshop Complete (`layout-full-dark closing-slide`)
+## Slide 29 -- Workshop Complete (`layout-full-dark closing-slide`)
 
 | Date | Session | Description |
 |------|---------|-------------|
@@ -395,6 +362,7 @@ Connect the skill you wrote to the model you built in the previous workshops.
 | March 23 | Knowledge Collections ✓ | Grounded in your materials |
 | March 30 (Today) | Skills & Tools ✓ | Step-by-step workflows |
 
-You now have a custom AI tool with three modular layers that can be tested as a configuration and refined iteratively; that way, you can see what each component contributes and where to focus before you introduce it in the classroom.
+You now have a custom AI tool with three modular layers that can be tested as a configuration and refined iteratively.
+That way, you can see what each component contributes and where to focus before you introduce it in the classroom.
 
 ailab.gc.cuny.edu
