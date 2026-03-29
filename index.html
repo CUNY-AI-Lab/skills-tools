@@ -570,43 +570,46 @@ When a student [specific action or input], follow this procedure:</pre>
 <!-- ==========================================
      SLIDE — STRATEGY: SKILLS TO BUILD + PITFALLS
      ========================================== -->
-<div class="slide layout-grid" role="group" aria-roledescription="slide" aria-label="Strategy: Skills Worth Building and Common Pitfalls" data-slide="strategy" tabindex="-1">
-  <h2>Strategy</h2>
-  <div class="grid-2">
-    <div class="card card-cyan">
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Strategy: Skills Worth Building and Common Pitfalls" data-slide="strategy" tabindex="-1">
+  <div class="content">
+    <span class="label label-cyan">Skills Worth Building</span>
+    <h2>Strategy</h2>
+    <div class="card card-cyan" style="margin-bottom: 0.5em;">
       <h4>Excerpt-and-Respond</h4>
       <p>Quote a passage. Name one observation. Ask one question.</p>
     </div>
-    <div class="card">
+    <div class="card" style="margin-bottom: 0.5em;">
       <h4>Source-Grounded Q&amp;A</h4>
       <p>Retrieve and quote from the knowledge collection before responding.</p>
     </div>
-    <div class="card card-navy">
+    <div class="card card-navy" style="margin-bottom: 0.5em;">
       <h4>Rubric Walk-Through</h4>
       <p>One criterion at a time. Quote it, ask the student to self-evaluate.</p>
     </div>
-    <div class="card card-cyan">
+    <div class="card card-cyan" style="margin-bottom: 0;">
       <h4>One-Question Focus</h4>
       <p>One focused question &mdash; no list, no preamble.</p>
     </div>
   </div>
-  <h4 class="step-hidden" data-step style="margin-top: 1em; color: var(--accent-red);">Watch Out</h4>
-  <div class="grid-2 step-hidden" data-step>
-    <div class="card" style="border-left-color: var(--accent-red);">
-      <h4>System Prompt Overload</h4>
-      <p>Keep the system prompt brief. Put procedures in separate skills.</p>
-    </div>
-    <div class="card" style="border-left-color: var(--accent-red);">
-      <h4>Skipping the Format</h4>
-      <p>If you want &ldquo;quote then respond,&rdquo; spell it out &mdash; the model won&rsquo;t guess.</p>
-    </div>
-    <div class="card" style="border-left-color: var(--accent-amber);">
-      <h4>No Wait Points</h4>
-      <p>Add &ldquo;Stop. Wait for the student&rdquo; between steps to force turn-taking.</p>
-    </div>
-    <div class="card" style="border-left-color: var(--accent-amber);">
-      <h4>Forgetting the Collection</h4>
-      <p>Tell the model to quote from uploaded docs &mdash; otherwise it uses its own training.</p>
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(24px, 3vh, 40px) clamp(20px, 2.5vw, 36px); justify-content: center;">
+    <div style="width: 100%; max-width: 480px; margin: 0 auto;">
+      <span class="label label-red" style="margin-bottom: 0.6em; display: inline-block;">Watch Out</span>
+      <div class="card" style="border-left-color: var(--accent-red); margin-bottom: 0.5em;">
+        <h4>System Prompt Overload</h4>
+        <p>Keep the system prompt brief. Put procedures in separate skills.</p>
+      </div>
+      <div class="card" style="border-left-color: var(--accent-red); margin-bottom: 0.5em;">
+        <h4>Skipping the Format</h4>
+        <p>If you want &ldquo;quote then respond,&rdquo; spell it out &mdash; the model won&rsquo;t guess.</p>
+      </div>
+      <div class="card" style="border-left-color: var(--accent-amber); margin-bottom: 0.5em;">
+        <h4>No Wait Points</h4>
+        <p>Add &ldquo;Stop. Wait for the student&rdquo; between steps to force turn-taking.</p>
+      </div>
+      <div class="card" style="border-left-color: var(--accent-amber); margin-bottom: 0;">
+        <h4>Forgetting the Collection</h4>
+        <p>Tell the model to quote from uploaded docs &mdash; otherwise it uses its own training.</p>
+      </div>
     </div>
   </div>
 </div>
