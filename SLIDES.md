@@ -1,6 +1,6 @@
 # Customizing Skills & Tools -- Slide Deck Content
 
-> CUNY AI Lab Sandbox Workshop (32 slides)
+> CUNY AI Lab Sandbox Workshop (31 slides)
 > Source: `index.html`
 
 ---
@@ -305,40 +305,38 @@ Strategies & Pitfalls
 
 ---
 
-## Slide 23 -- Skills Worth Building (`layout-grid`)
+## Slide 23 -- Strategy (`layout-grid`, step-reveal)
 
-- **Excerpt-and-Respond Feedback:** Quote a passage, name one observation, ask one question. Stop.
-- **Source-Grounded Q&A:** Retrieve and quote from the knowledge collection before answering. Cite by name.
-- **Rubric Walk-Through:** One criterion at a time. Quote it, ask the student to self-evaluate, discuss before moving on.
-- **One-Question Concision:** Single focused question. No preamble, no list. Force the model to choose what matters most.
+**Skills Worth Building (visible on load):**
+- **Excerpt-and-Respond:** Quote a passage. Name one observation. Ask one question.
+- **Source-Grounded Q&A:** Retrieve and quote from the knowledge collection before responding.
+- **Rubric Walk-Through:** One criterion at a time. Quote it, ask the student to self-evaluate.
+- **One-Question Focus:** One focused question -- no list, no preamble.
 
----
-
-## Slide 24 -- Common Pitfalls (`layout-content`)
-
-**Label:** Watch Out
-
-- **Putting Everything in the System Prompt:** A long system prompt with embedded procedures confuses the model. Decompose into separate skills. The prompt sets purpose and direction; skills handle specific procedures.
-- **Skipping the Format:** Without a format spec, the model defaults to its own structure. If you want "quote then respond," spell it out.
-- **No Wait Points:** If your procedure has five steps, the model may execute all five in one response. Explicit "Stop. Wait for the student to respond" instructions force turn-taking.
-- **Forgetting the Knowledge Collection:** Skills that reference course materials need explicit retrieval instructions. Without them, the model paraphrases or draws on training data instead of your documents.
+**Watch Out (step-reveal):**
+- **System Prompt Overload:** Keep the system prompt brief. Put procedures in separate skills.
+- **Skipping the Format:** If you want "quote then respond," spell it out -- the model won't guess.
+- **No Wait Points:** Add "Stop. Wait for the student" between steps to force turn-taking.
+- **Forgetting the Collection:** Tell the model to quote from uploaded docs -- otherwise it uses its own training.
 
 ---
 
-## Slide 25 -- Where Skills Live (`layout-split`)
+## Slide 24 -- Where Skills Live (`layout-split`)
 
 **Label:** Integration
 
-Two ways to add a skill to your model:
+Skills are attached to a model in Workspace → Models. Once attached, the skill is active for every conversation with that model.
 
-- **Option 1: Attach to Model** -- In Workspace → Models, use the skill toggle to attach it directly. Always active for every conversation with that model.
-- **Option 2: Enable Per Chat** -- Click + in the message bar and toggle the skill on. Good for testing or selective use.
+1. **Paste into System Prompt** -- Add the skill at the end of your system prompt. Save.
+2. **Or upload as .txt** -- Save the skill as a `.txt` file. Upload to Workspace → Knowledge.
 
-**Stage:** Diagram showing "Always Active" (skill attached to model) vs. "Per Chat" (toggled on in individual conversations)
+**Key principle:** If the model should *always* follow the skill, put it in the system prompt. If it should follow the skill only when relevant, put it in the knowledge collection where retrieval handles the routing.
+
+**Stage:** Diagram showing "Always Active" (skill appended to system prompt) vs. "Retrieved When Needed" (skill saved as .txt in knowledge collection)
 
 ---
 
-## Slide 26 -- Tools: Instruction (`layout-content`)
+## Slide 25 -- Tools: Instruction (`layout-content`)
 
 **Label:** Tools in Open WebUI (progression: 1 of 2)
 
@@ -346,53 +344,54 @@ Two ways to add a skill to your model:
 
 What's missing *(step-reveal)*:
 1. No distinction between skills (plain text you write) and tools (code the model calls)
-2. Doesn't specify *which* tools to enable or why
-3. No guidance on model selection: smaller models handle tool calling inconsistently
+2. Doesn't specify *which* tools to enable or why -- turning everything on adds noise
+3. No guidance on model selection: smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently
 4. No connection between tools and the skill that should use them
 5. Student-facing behavior unchanged -- enabling a tool doesn't mean the model knows when to use it
 
 ---
 
-## Slide 27 -- Skills vs. Tools (`layout-split`)
+## Slide 26 -- Skills vs. Tools (`layout-split`)
 
 **Label:** Tools in Open WebUI (progression: 2 of 2)
 
-A **skill** is a document you write in plain language. A **tool** is code -- a function the model calls to do something it can't do with language alone.
+A **skill** is a document you write in markdown or plain text, whereas a **tool** is code -- a function the model calls to do something it can't do with language alone.
 
-**Per Chat:** Click + in the message bar and toggle tools on. Good for experimenting.
-**Per Model:** Workspace → Models → Tools. Every conversation with that model gets access.
+- **Per Chat:** Click **+** in the message bar to toggle individual tools on for that conversation.
+- **Per Model:** Attach tools permanently in **Workspace → Models → Tools**.
 
-**Caveat:** Smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently. Use a larger model like Kimi K2.5 or GLM 5 for reliable tool use.
+**Caveat:** Smaller models (e.g. Gemma 3 27B) call tools inconsistently. Use Kimi K2.5 or GLM 5 for reliable tool use.
 
-**Stage:** Skill (plain text) vs. Tool (code) diagram + 2×2 grid of built-in tools
+**Stage:** Skill (plain text) vs. Tool (code) diagram + 2×2 grid of built-in tools (Web Search, Knowledge Query, Code Execution, Image Generation)
 
 ---
 
-## Slide 28 -- Section Divider: Hands-On (`layout-divider`)
+## Slide 27 -- Section Divider: Hands-On (`layout-divider`)
 
 **Section label:** Part V
 Write Your First Skill
+Pick one pedagogical move from your course and turn it into a step-by-step recipe.
 
 ---
 
-## Slide 29 -- Choose Your Move (`layout-content`, centered)
+## Slide 28 -- Choose Your Move (`layout-content`, centered)
 
 **Label:** Exercise
 
-Which of these is closest to the skill you want to build?
+Which is closest to the skill you want to build?
 
-- Feedback on Writing
-- Source Analysis
-- Visual / Image Reading
-- Something Else
+- **Establishing Stasis** -- Narrow a research topic one question at a time
+- **Sourcing a Document** -- Quote, then ask who, when, for whom
+- **Reading the Frame** -- Describe → analyze → interpret
+- **Something Else** -- Any repeatable pedagogical move
 
 ---
 
-## Slide 30 -- Write Your Skill (`layout-split`)
+## Slide 29 -- Write Your Skill (`layout-split`)
 
 **Label:** Draft It
 
-Use the four-part structure.
+Use the four-part structure to write a skill for the move you chose.
 
 1. **Trigger** *(step-reveal)*
 2. **Procedure** *(step-reveal)*
@@ -403,29 +402,31 @@ Full template with copy button.
 
 ---
 
-## Slide 31 -- Add Your Skill (`layout-split`)
+## Slide 30 -- Add Your Skill (`layout-split`)
 
 **Label:** Integrate It
 
-Add the skill to your model.
+Connect the skill you wrote to the model you built in the previous workshops.
 
-- **Option A: Attach to Model** -- Use the skill toggle in Workspace → Models. *(step-reveal)*
-- **Option B: Enable Per Chat** -- Click + in the message bar and toggle on. *(step-reveal)*
-- **Test it** -- Open a new chat. Trigger the skill with realistic student input. *(step-reveal)*
-- **Iterate** -- If the model skips steps, add "Stop. Wait for the student." If it dumps everything, add "One [X] per turn." *(step-reveal)*
+1. **Paste into System Prompt** -- Workspace → Models. Add the skill at the end of your system prompt. Save.
+2. **Or upload as .txt** -- Save the skill as a `.txt` file. Upload to Workspace → Knowledge.
 
-**Stage:** Three layers (System Prompt + Knowledge Collection + Your Skill) → Your Complete AI Tool
+*(step-reveal:)*
+- **Test It** -- Open a new chat. Trigger the skill with realistic student input. Does it follow the procedure?
+- **Iterate:** If the model skips steps, add wait points. If it dumps everything, add "one per turn."
+
+**Stage:** Three layers (System Prompt + Knowledge Collection + Your Skill) → Your Complete AI Tool (Role + sources + workflows)
 
 ---
 
-## Slide 32 -- Workshop Complete (`layout-full-dark closing-slide`)
+## Slide 31 -- Workshop Complete (`layout-full-dark closing-slide`)
 
 | Date | Session | Description |
 |------|---------|-------------|
-| March 16 | System Prompts ✓ | Defined how the model responds and scaffolds learning |
-| March 23 | Knowledge Collections ✓ | Grounded the model in your course materials |
-| March 30 (Today) | Skills & Tools ✓ | Added step-by-step workflows for specific pedagogical moves |
+| March 16 | System Prompts ✓ | Role, constraints, tone |
+| March 23 | Knowledge Collections ✓ | Grounded in your materials |
+| March 30 (Today) | Skills & Tools ✓ | Step-by-step workflows |
 
-Three layers: a system prompt that sets behavior, a knowledge collection that grounds it in your materials, and skills that teach it specific moves. Keep testing, keep iterating.
+You now have a custom AI tool with three modular layers that can be tested as a configuration and updated individually, so you can see what each component adds and where to refine before you introduce it to students in the classroom.
 
 ailab.gc.cuny.edu
