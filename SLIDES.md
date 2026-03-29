@@ -274,7 +274,7 @@ Skills & Tools
 
 ---
 
-## Slide 23 -- Where Skills Live (`layout-content`)
+## Slide 23 -- Activating Skills (`layout-content`)
 
 **Label:** Skills in Open WebUI
 
