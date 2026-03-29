@@ -515,20 +515,25 @@ When a student [specific action or input], follow this procedure:</pre>
 <!-- ==========================================
      ACTIVATING SKILLS
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 22: Activating Skills" data-slide="skills-where" tabindex="-1">
-  <span class="label label-cyan">Skills in Open WebUI</span>
-  <h2>Activating Skills</h2>
-  <p style="margin-bottom: 0.8em;">A skill is worth making when the move has a <strong>repeatable structure</strong> &mdash; trigger, steps, output shape &mdash; that you want the model to follow every time.</p>
-  <div class="card card-cyan" style="margin-bottom: 0.5em;">
-    <h4>Toggle in the Model Card</h4>
-    <p>Open <strong>Workspace &rarr; Models</strong>, find your model, and toggle the skill on. It activates automatically in every chat with that model.</p>
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 22: Activating Skills" data-slide="skills-where" tabindex="-1">
+  <div class="content">
+    <span class="label label-cyan">Skills in Open WebUI</span>
+    <h2>Activating Skills</h2>
+    <p style="margin-bottom: 0.8em;">A skill is worth making when the move has a <strong>repeatable structure</strong> &mdash; trigger, steps, output shape &mdash; that you want the model to follow every time.</p>
+    <div class="card card-cyan" style="margin-bottom: 0.5em;">
+      <h4>Toggle in the Model Card</h4>
+      <p>Open <strong>Workspace &rarr; Models</strong>, find your model, and toggle the skill on. It activates automatically in every chat with that model.</p>
+    </div>
+    <div class="card" style="margin-bottom: 0.5em;">
+      <h4>Paste at End of System Prompt</h4>
+      <p>Copy the skill text and append it to your system prompt. Signpost the trigger so you can tell at a glance which move each skill handles.</p>
+    </div>
+    <div class="tip-box">
+      <p><strong>Watch out:</strong> Keep the system prompt brief &mdash; put procedures in skills. Spell out the format. Add &ldquo;Stop. Wait for the student&rdquo; between steps.</p>
+    </div>
   </div>
-  <div class="card" style="margin-bottom: 0.5em;">
-    <h4>Paste at End of System Prompt</h4>
-    <p>Copy the skill text and append it to your system prompt. Signpost the trigger so you can tell at a glance which move each skill handles.</p>
-  </div>
-  <div class="tip-box">
-    <p><strong>Watch out:</strong> Keep the system prompt brief &mdash; put procedures in skills. Spell out the format. Add &ldquo;Stop. Wait for the student&rdquo; between steps.</p>
+  <div class="stage">
+    <!-- Screenshot placeholder: Workspace → Models skill toggle -->
   </div>
 </div>
 
