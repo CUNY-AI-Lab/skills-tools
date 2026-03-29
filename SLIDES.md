@@ -97,10 +97,10 @@ Composition -- Stasis Theory
 
 **Label:** Composition & Writing (progression: 1 of 2)
 
-**Starting Point:** `When a student is developing a research topic, walk them through the four stases -- conjecture, definition, quality, and policy -- to help them narrow their question. Ask one stasis at a time.`
+**Starting Point:** `When a student is developing a research topic, walk them through four stages -- conjecture, definition, quality, and policy -- to help them narrow their question. Ask one stasis at a time.`
 
 What's missing *(step-reveal)*:
-1. Model walks through all four stases in a single response instead of pausing at each
+1. Model walks through all four stages in a single response instead of pausing at each
 2. No procedure for connecting the student's working topic to each stasis question
 3. Treats stasis as a checklist rather than a deliberative process
 4. No mechanism to let the student reformulate before moving on
@@ -127,13 +127,6 @@ Your topic: [student's stated topic]
 [One stasis question, tied to a specific phrase the student used]
 [1-2 sentences explaining why this question matters for their project]
 
-Constraints:
-- One stasis per turn.
-- Never rewrite the student's topic.
-- Each question must build on the student's previous response.
-- If the student says "I don't know," point them back to a phrase from their earlier response.
-- After all four stases, ask the student to choose which stasis their argument lives in.
-
 ---
 
 ## Slide 10 -- Section Divider: History (`layout-divider`)
@@ -159,7 +152,7 @@ What's missing *(step-reveal)*:
 
 ---
 
-## Slide 12 -- A Skill That Sources a Document (`layout-content`)
+## Slide 12 -- A Skill That Helps Vet a Source (`layout-content`)
 
 **Label:** History (progression: 2 of 2)
 
@@ -173,13 +166,6 @@ Procedure:
 5. Ask: "When and where was this written? What was happening that shaped what the author could say?" Wait.
 6. Ask: "Who was the intended audience? How does that change what the document means?" Wait.
 7. Ask: "Given what you now know about the author, the moment, and the audience -- what can this source tell us, and what can't it?"
-
-Constraints:
-- Always quote from the uploaded source. Never paraphrase a primary document.
-- Never offer an interpretation before the student has attempted one.
-- If the source is not in the knowledge collection, say so.
-- One question per turn.
-- Each question must build on the student's previous answer.
 
 ---
 
@@ -222,12 +208,6 @@ Procedure:
 
 Framework: Description → Analysis → Interpretation
 
-Constraints:
-- Never describe the image for the student.
-- One formal element per turn.
-- If the student jumps to interpretation before describing, redirect: "What specific visual detail supports that reading?"
-- Quote from knowledge collection materials when providing context.
-
 ---
 
 ## Slide 16 -- Section Divider: Building Blocks (`layout-divider`)
@@ -241,12 +221,11 @@ Building Your Own Skills
 
 **Label:** Structure
 
-Every skill has four parts.
+Every skill has three parts.
 
 1. **Trigger** -- When should this skill activate?
 2. **Procedure** -- What steps does the model follow, in order?
 3. **Format** -- What should the output look like?
-4. **Constraints** -- What should the model never do within this skill?
 
 ---
 
@@ -285,16 +264,6 @@ Specify what the output should look like. Without a format, the model structures
 Template with copy button.
 
 ---
-
-## Slide 21 -- Component 4: Constraints (`layout-split`)
-
-What should the model *never* do within this skill? Constraints address the specific ways this workflow can go wrong.
-
-- What shortcut will the model take if you don't prevent it?
-- How should it redirect when students push back?
-- Should it limit itself to one question or one observation per turn?
-
-Template with copy button.
 
 ---
 
@@ -396,7 +365,6 @@ Use the four-part structure to write a skill for the move you chose.
 1. **Trigger** *(step-reveal)*
 2. **Procedure** *(step-reveal)*
 3. **Format** *(step-reveal)*
-4. **Constraints** *(step-reveal)*
 
 Full template with copy button.
 
@@ -415,7 +383,7 @@ Connect the skill you wrote to the model you built in the previous workshops.
 - **Test It** -- Open a new chat. Trigger the skill with realistic student input. Does it follow the procedure?
 - **Iterate:** If the model skips steps, add wait points. If it dumps everything, add "one per turn."
 
-**Stage:** Three layers (System Prompt + Knowledge Collection + Your Skill) → Your Complete AI Tool (Role + sources + workflows)
+**Stage:** Three layers (System Prompt + Knowledge Collection + Your Skill) → Your Complete AI Tool (Directive + sources + workflows)
 
 ---
 
@@ -427,6 +395,6 @@ Connect the skill you wrote to the model you built in the previous workshops.
 | March 23 | Knowledge Collections ✓ | Grounded in your materials |
 | March 30 (Today) | Skills & Tools ✓ | Step-by-step workflows |
 
-You now have a custom AI tool with three modular layers that can be tested as a configuration and updated individually, so you can see what each component adds and where to refine before you introduce it to students in the classroom.
+You now have a custom AI tool with three modular layers that can be tested as a configuration and refined iteratively; that way, you can see what each component contributes and where to focus before you introduce it in the classroom.
 
 ailab.gc.cuny.edu
