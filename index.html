@@ -71,15 +71,60 @@
 <!-- ==========================================
      SLIDE 3 — WHAT YOU'VE BUILT SO FAR
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 3: What You Have Built So Far" data-slide="recap" tabindex="-1" style="justify-content: center; align-items: center; text-align: center;">
-  <span class="label label-cyan">Where We Are</span>
-  <h2>What You&rsquo;ve Built So Far</h2>
-  <p style="margin-bottom: 1.4em; max-width: 620px; margin-left: auto; margin-right: auto;">Over the last two workshops, you assembled two layers of a custom AI tool. Today you add the third.</p>
-  <ol class="stream-list" style="text-align: left; max-width: 580px; margin: 0 auto; line-height: 1.9; padding-left: 1.4em;">
-    <li><strong>System Prompt</strong> &mdash; Tells the model how to behave: role, procedure, constraints, tone</li>
-    <li><strong>Knowledge Collection</strong> &mdash; Gives it something to draw on: syllabi, readings, rubrics</li>
-    <li><strong style="color: var(--accent-cyan);">Skills &amp; Tools</strong> &mdash; Teaches it specific workflows: step-by-step recipes for the pedagogical moves you actually want</li>
-  </ol>
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 3: Before We Build" data-slide="recap" tabindex="-1">
+  <div class="content">
+    <span class="label label-cyan">Quick Check</span>
+    <h2>Before We Build</h2>
+    <p style="margin-bottom: 1.2em;">Verify your setup, then identify the move you&rsquo;ll build today.</p>
+
+    <div class="step-hidden" data-step="1" style="margin-bottom: 1em;">
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.3em;">1. System Prompt</h3>
+      <p>Open your model. What <strong>role</strong> does it play? What <strong>constraints</strong> did you set?</p>
+    </div>
+
+    <div class="step-hidden" data-step="2" style="margin-bottom: 1em;">
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.3em;">2. Knowledge Collection</h3>
+      <p>Is a collection attached? Does the prompt tell the model to use it?</p>
+    </div>
+
+    <div class="step-hidden" data-step="3">
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.3em;">3. Name One Move</h3>
+      <p>What specific sequence should the model follow? Not &ldquo;help with writing&rdquo; &mdash; something like: <em>read the sentence, find one issue, ask a question, wait.</em></p>
+      <div class="tip-box" style="margin-top: 0.8em;">
+        <p>Hold that move. Today we turn procedures like this into explicit, repeatable steps.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vh, 32px) clamp(14px, 1.8vw, 24px); justify-content: center; align-items: center; gap: 0;">
+
+    <div class="step-hidden" data-step="1" style="width: 100%; max-width: 280px;">
+      <div class="flow-node flow-prompt" style="width: 100%; position: relative;">
+        <span style="position: absolute; top: 8px; right: 10px; color: var(--accent-green); font-weight: 700; font-size: 0.9rem;">&#10003;</span>
+        <div class="flow-node-code" style="font-size: 0.85rem;">System Prompt</div>
+        <div class="flow-node-desc" style="font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-top: 3px; font-size: 0.65rem;">role &middot; constraints &middot; tone</div>
+      </div>
+      <div style="text-align: center; color: var(--accent-cyan); font-size: 1.2rem; line-height: 2;">&#8595;</div>
+    </div>
+
+    <div class="step-hidden" data-step="2" style="width: 100%; max-width: 280px;">
+      <div class="flow-node flow-prompt" style="width: 100%; position: relative; border-color: rgba(59, 111, 181, 0.4);">
+        <span style="position: absolute; top: 8px; right: 10px; color: var(--accent-green); font-weight: 700; font-size: 0.9rem;">&#10003;</span>
+        <div class="flow-node-code" style="font-size: 0.85rem;">Knowledge Collection</div>
+        <div class="flow-node-desc" style="font-family: 'JetBrains Mono', monospace; color: var(--text-muted); margin-top: 3px; font-size: 0.65rem;">attached &amp; referenced in prompt</div>
+      </div>
+      <div style="text-align: center; color: var(--accent-cyan); font-size: 1.2rem; line-height: 2;">&#8595;</div>
+    </div>
+
+    <div class="step-hidden" data-step="3" style="width: 100%; max-width: 280px;">
+      <div class="flow-node flow-prompt" style="width: 100%; position: relative; border-color: rgba(78, 205, 196, 0.6); background: rgba(78, 205, 196, 0.08);">
+        <span class="flow-hidden-badge" style="background: var(--accent-cyan);">Today</span>
+        <div class="flow-node-code" style="font-size: 0.85rem;">Your Skill</div>
+        <div class="flow-node-desc" style="font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); margin-top: 3px; font-size: 0.65rem;">a step-by-step procedure</div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- ==========================================
@@ -89,10 +134,10 @@
   <div class="content" style="flex: 0 0 45%;">
     <span class="label label-cyan">The Basics</span>
     <h2>What Is a Skill?</h2>
-    <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a structured procedure you write for a specific pedagogical task. It tells the model <em>exactly</em> how to handle a situation that a general system prompt can&rsquo;t cover on its own.</p>
-    <blockquote>Think of it as a <strong>recipe</strong>: a step-by-step set of instructions for a move you&rsquo;d make as an instructor &mdash; giving feedback on a draft, walking through a source, reading a visual artifact &mdash; written so the model can follow it consistently.</blockquote>
+    <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a document you write in plain language &mdash; no code, just structured text. When activated, it injects detailed instructions into the system prompt that the model follows in context.</p>
+    <blockquote>Think of it as a <strong>recipe</strong>: a step-by-step procedure for a move you&rsquo;d make as an instructor &mdash; establishing stasis, sourcing a document, reading a cinematic frame &mdash; written so the model can execute it consistently.</blockquote>
     <div class="tip-box" style="margin-top: 1em;">
-      <p><strong>Key distinction:</strong> The system prompt sets the model&rsquo;s general behavior. A skill decomposes a <em>specific</em> task into explicit steps the model wouldn&rsquo;t follow without being told.</p>
+      <p><strong>Key distinction:</strong> The system prompt sets general behavior. A skill decomposes a <em>specific</em> task into steps the model won&rsquo;t follow unprompted.</p>
     </div>
   </div>
   <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vh, 32px) clamp(14px, 1.8vw, 24px); justify-content: center;">
@@ -157,17 +202,17 @@
 <div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 5: Why Skills Matter" data-slide="why-skills" tabindex="-1">
   <span class="label label-cyan">Why Bother?</span>
   <h2>Why Skills Matter</h2>
-  <p style="margin-bottom: 0.6em;">Your system prompt says <strong>&ldquo;give feedback on student writing.&rdquo;</strong> A student submits a paragraph from their draft.</p>
+  <p style="margin-bottom: 0.6em;">Your system prompt says <strong>&ldquo;help students develop research topics.&rdquo;</strong> A student types: <em>&ldquo;I want to write about social media and mental health.&rdquo;</em></p>
   <div class="comparison" data-steps="2">
     <div class="comparison-panel panel-muted step-visible">
       <h4 style="color: var(--accent-red);">Without a Skill</h4>
-      <p>&ldquo;Your paragraph has some good ideas but needs work. The thesis could be stronger, and you should add more evidence. Consider reorganizing the structure and checking for grammar issues. Also, make sure your citations are in the correct format.&rdquo;</p>
-      <p style="margin-top: 0.6em; font-style: italic; font-size: 0.85em; opacity: 0.7;">Vague, comprehensive, and unhelpful. Addresses everything at once without direction. The student doesn&rsquo;t know where to start.</p>
+      <p>&ldquo;That&rsquo;s a great topic! You could narrow it by focusing on a specific platform, age group, or type of mental health impact. Consider looking at recent studies on Instagram and anxiety, or TikTok and body image. You&rsquo;ll also want a clear thesis statement.&rdquo;</p>
+      <p style="margin-top: 0.6em; font-style: italic; font-size: 0.85em; opacity: 0.7;">Lists options instead of asking questions. The student still has no method for choosing among them.</p>
     </div>
     <div class="comparison-panel step-hidden" data-step="2">
-      <h4 style="color: var(--accent-green);">With a Feedback Skill</h4>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85em; background: rgba(78, 205, 196, 0.06); padding: 0.8em; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">&ldquo;You write: <em>&lsquo;The author uses symbolism to show the complexity of identity.&rsquo;</em><br><br>I notice you&rsquo;re naming a technique (symbolism) but not yet showing how it works in the text. Which specific image or moment are you thinking of? Let&rsquo;s start there.&rdquo;</p>
-      <p style="margin-top: 0.6em; font-style: italic; font-size: 0.85em; opacity: 0.7;">Quotes the student&rsquo;s own words, names one issue, asks a question. The skill told the model <em>how</em> to give feedback, not just to give it.</p>
+      <h4 style="color: var(--accent-green);">With a Stasis Theory Skill</h4>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85em; background: rgba(78, 205, 196, 0.06); padding: 0.8em; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">&ldquo;Your topic: <em>social media and mental health.</em><br><br>Let&rsquo;s start with the facts. What specific situation are you responding to &mdash; something you&rsquo;ve read, noticed, or experienced? What has happened that makes this a question worth asking right now?&rdquo;</p>
+      <p style="margin-top: 0.6em; font-style: italic; font-size: 0.85em; opacity: 0.7;">Opens with one stasis question (conjecture), grounded in the student&rsquo;s own words. The skill told the model <em>how</em> to narrow, not just to narrow.</p>
     </div>
   </div>
 </div>
@@ -179,21 +224,21 @@
   <div class="content">
     <span class="label label-cyan">The Problem</span>
     <h2>The Gap Skills Fill</h2>
-    <p style="margin-bottom: 0.8em;">Models can do many things well &mdash; but they don&rsquo;t do them <em>unless you explicitly instruct them to</em>. A system prompt tells the model what kind of tool it is. But certain moves require a <strong>plan, formula, or recipe</strong> to execute consistently.</p>
+    <p style="margin-bottom: 0.8em;">Models can do many things &mdash; but not unless you spell it out. A system prompt sets behavior. Certain moves need a <strong>step-by-step recipe</strong> to execute consistently.</p>
     <h4 style="margin-top: 1em;">What models won&rsquo;t do without a skill:</h4>
     <ul style="margin-top: 0.6em; line-height: 1.9;">
-      <li>Quote a student&rsquo;s writing and respond below each excerpt</li>
-      <li>Walk through a knowledge collection source step by step</li>
+      <li>Walk a student through stasis theory one question at a time, narrowing with each turn</li>
+      <li>Quote a specific passage from an uploaded source before asking an analytical question</li>
       <li>Ask <em>one</em> focused question instead of listing five observations</li>
-      <li>Follow a rubric criterion by criterion, not all at once</li>
-      <li>Read a cinematic image using a structured visual framework</li>
+      <li>Build on what the student just said rather than repeating a generic prompt</li>
+      <li>Scaffold from description to analysis to interpretation across multiple turns</li>
     </ul>
   </div>
   <div class="stage" style="flex-direction: column; justify-content: center; padding: clamp(16px, 2.5vw, 40px);">
     <div style="display: flex; flex-direction: column; gap: clamp(14px, 2vh, 24px); width: 100%; max-width: 380px; margin: 0 auto;">
       <div class="flow-node" style="width: 100%; background: rgba(192, 91, 110, 0.06); border: 2px solid rgba(192, 91, 110, 0.25); border-radius: 12px;">
         <div class="flow-node-label" style="font-size: 0.95rem; color: var(--accent-red);">System Prompt Alone</div>
-        <div class="flow-node-desc" style="font-size: 0.8rem;">&ldquo;Give feedback on student writing&rdquo;</div>
+        <div class="flow-node-desc" style="font-size: 0.8rem;">&ldquo;Help students develop research topics&rdquo;</div>
         <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 4px;">Model knows <em>what</em> to do, not <em>how</em></div>
       </div>
       <div style="text-align: center;" aria-hidden="true">
@@ -201,7 +246,7 @@
       </div>
       <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.35); border-radius: 12px;">
         <div class="flow-node-label" style="font-size: 0.95rem; color: var(--accent-cyan);">System Prompt + Skill</div>
-        <div class="flow-node-desc" style="font-size: 0.8rem;">&ldquo;Quote the excerpt, name one issue, ask one question&rdquo;</div>
+        <div class="flow-node-desc" style="font-size: 0.8rem;">&ldquo;Ask one stasis question, build on the student&rsquo;s last answer&rdquo;</div>
         <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 4px;">Model knows <em>what</em> and <em>how</em></div>
       </div>
     </div>
@@ -213,100 +258,70 @@
      ========================================== -->
 <div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 7: Part I - Skill Examples" data-slide="part1" tabindex="-1">
   <span class="section-label">Part I: Example 1</span>
-  <h2>Targeted Writing Feedback</h2>
-  <p class="divider-sub">Composition &amp; Writing</p>
+  <h2>Establishing Stasis</h2>
+  <p class="divider-sub">Composition &mdash; Stasis Theory</p>
   <div class="divider-line"></div>
 </div>
 
 <!-- ==========================================
-     SLIDE 8 — COMPOSITION: BAD SKILL
+     SLIDE 8 — COMPOSITION: THE INSTRUCTION
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 8: Composition: The Vague Instruction" data-slide="comp-bad" tabindex="-1">
+<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 8: Composition: The Instruction" data-slide="comp-instruction" tabindex="-1">
   <div class="progression-header">
     <span class="label label-blue" style="margin-bottom: 0;">Composition &amp; Writing</span>
     <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad dot-active"></div>
-      <div class="progression-dot"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>The Vague Instruction</h2>
-  <div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Give helpful feedback on student writing.</div>
-  <div style="margin-top: 1em;">
-    <h4 style="color: var(--accent-red);">What goes wrong?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Model dumps a laundry list of issues: thesis, evidence, grammar, citations &mdash; all at once</li>
-      <li>No procedure for <em>how</em> to engage with the student&rsquo;s actual text</li>
-      <li>Student receives a wall of feedback with no clear next step</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 9 — COMPOSITION: MEDIOCRE SKILL
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 9: Composition: Getting Warmer" data-slide="comp-mid" tabindex="-1">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Composition &amp; Writing</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
       <div class="progression-dot dot-mid dot-active"></div>
       <div class="progression-dot"></div>
     </div>
   </div>
-  <h2>Getting Warmer</h2>
-  <div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>When a student shares a draft, focus on one issue at a time. Quote specific passages and ask questions instead of giving answers. Keep responses concise.</div>
-  <div class="why-better">
-    <h4>What improved?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Asks for one issue at a time instead of everything at once</li>
-      <li>Mentions quoting passages and asking questions</li>
-      <li>Calls for concision</li>
-    </ul>
-  </div>
-  <div style="margin-top: 0.6em;">
-    <h4 style="color: var(--accent-amber);">What's still missing?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No step-by-step procedure: the model decides on its own how to structure the response</li>
-      <li>No output format: the &ldquo;quote then respond&rdquo; move won&rsquo;t happen consistently</li>
-      <li>No guidance on prioritizing higher-order concerns over surface-level fixes</li>
-    </ul>
+  <h2>Instruction</h2>
+  <div class="prompt-block prompt-mid"><span class="prompt-label">Starting Point</span>When a student is developing a research topic, walk them through the four stases &mdash; conjecture, definition, quality, and policy &mdash; to help them narrow their question. Ask one stasis at a time.</div>
+  <div style="margin-top: 1em;">
+    <ol class="stream-list step-hidden" data-step style="line-height: 1.9; padding-left: 1.4em;">
+      <li>Model walks through all four stases in a single response instead of pausing at each</li>
+      <li>No procedure for connecting the student&rsquo;s working topic to each stasis question</li>
+      <li>Treats stasis as a checklist rather than a deliberative process</li>
+      <li>No mechanism to let the student reformulate before moving on</li>
+      <li>Skips the key move: helping the student see which stasis their argument lives in</li>
+    </ol>
   </div>
 </div>
 
 <!-- ==========================================
-     SLIDE 10 — COMPOSITION: GREAT SKILL
+     SLIDE 9 — COMPOSITION: THE SKILL
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 10: A Skill That Structures Feedback" data-slide="comp-good" tabindex="-1">
+<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 9: A Skill That Structures Feedback" data-slide="comp-good" tabindex="-1">
   <div class="progression-header">
     <span class="label label-blue" style="margin-bottom: 0;">Composition &amp; Writing</span>
     <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
       <div class="progression-dot dot-mid"></div>
       <div class="progression-dot dot-good dot-active"></div>
     </div>
   </div>
-  <h2>A Skill That Structures Feedback</h2>
-  <div class="prompt-block prompt-good" style="font-size: clamp(0.72rem, 1vw, 0.88rem);"><span class="prompt-label">Strong</span><strong style="color: var(--accent-cyan);">Skill: Targeted Writing Feedback</strong>
-When a student shares a passage from their draft, follow this procedure:
+  <h2>A Skill That Establishes Stasis</h2>
+  <div class="prompt-block prompt-good" style="font-size: clamp(0.72rem, 1vw, 0.88rem);"><span class="prompt-label">Strong</span><strong style="color: var(--accent-cyan);">Skill: Establishing Stasis for a Research Topic</strong>
+When a student is developing or narrowing a research topic, follow this procedure:
 
 <strong style="color: var(--accent-cyan);">Procedure:</strong>
-1. Read the passage. Identify the single highest-priority issue &mdash; argument, structure, or evidence before grammar or style.
-2. Quote the specific sentence or phrase where the issue is most visible. Use a block quote.
-3. Directly below the quote, name what you notice in 1&ndash;2 sentences. Be specific: &ldquo;I notice you name a technique but don&rsquo;t yet show how it works in the text.&rdquo;
-4. Ask one question that helps the student rethink that moment. Do not suggest a fix.
-5. Stop. Do not address additional issues until the student responds.
+1. Ask the student to state their topic in one sentence. Do not evaluate or refine it yet.
+2. Conjecture: &ldquo;What has happened or is happening that makes this worth investigating?&rdquo; Wait for their answer. Use what they say to sharpen the next question.
+3. Definition: Point to a key term in their response. &ldquo;How are you defining [term]? What kind of problem is this &mdash; legal, ethical, empirical, cultural?&rdquo; Wait.
+4. Quality: &ldquo;What&rsquo;s at stake, and for whom? What makes this serious enough to argue about in an 8-page paper?&rdquo; If their scope is too broad, ask them to name one specific population or context. Wait.
+5. Policy: &ldquo;What should be done, and by whom?&rdquo; Help the student see whether their argument is making a factual claim, a definitional claim, a value judgment, or a policy proposal.
+6. Ask: &ldquo;Which of these four questions does your argument most need to answer?&rdquo; Guide them toward a thesis grounded in that stasis.
 
 <strong style="color: var(--accent-cyan);">Format:</strong>
-&gt; [quoted excerpt from student draft]
+Your topic: [student&rsquo;s stated topic]
 
-[1&ndash;2 sentences naming what you observe]
-[One question for the student]
+[One stasis question, tied to a specific phrase the student used]
+[1&ndash;2 sentences explaining why this question matters for their project]
 
 <strong style="color: var(--accent-cyan);">Constraints:</strong>
-&bull; Never rewrite the student&rsquo;s sentence. Never offer alternative phrasing.
-&bull; If the student asks &ldquo;is this good?&rdquo; redirect: &ldquo;What are you trying to accomplish in this paragraph?&rdquo;
-&bull; If there are no higher-order concerns, then and only then address style or mechanics.</div>
+&bull; One stasis per turn. Do not list all four at once.
+&bull; Never rewrite the student&rsquo;s topic. Ask questions that help them rewrite it themselves.
+&bull; Each question must build on a specific distinction or clarification the student made in their previous response &mdash; do not repeat generic stasis prompts.
+&bull; If the student says &ldquo;I don&rsquo;t know,&rdquo; point them back to a phrase from their earlier response and ask what it assumes.
+&bull; After all four stases, always ask the student to choose which stasis their argument lives in &mdash; do not choose for them.</div>
 </div>
 
 <!-- ==========================================
@@ -314,96 +329,72 @@ When a student shares a passage from their draft, follow this procedure:
      ========================================== -->
 <div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 11: Example 2 - Working with Sources" data-slide="history-intro" tabindex="-1">
   <span class="section-label">Example 2</span>
-  <h2>Working with Sources</h2>
-  <p class="divider-sub">History &amp; Primary Source Analysis</p>
+  <h2>Sourcing a Document</h2>
+  <p class="divider-sub">History &mdash; The Sourcing Heuristic</p>
   <div class="divider-line"></div>
 </div>
 
 <!-- ==========================================
-     SLIDE 12 — HISTORY: BAD SKILL
+     SLIDE 11 — HISTORY: THE INSTRUCTION
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 12: History: The Vague Instruction" data-slide="hist-bad" tabindex="-1">
+<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 11: History: The Instruction" data-slide="hist-instruction" tabindex="-1">
   <div class="progression-header">
     <span class="label label-blue" style="margin-bottom: 0;">History</span>
     <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad dot-active"></div>
-      <div class="progression-dot"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>The Vague Instruction</h2>
-  <div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Help students analyze the primary sources in the knowledge collection.</div>
-  <div style="margin-top: 1em;">
-    <h4 style="color: var(--accent-red);">What goes wrong?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Model summarizes the source instead of guiding analysis</li>
-      <li>No procedure for drawing on specific documents from the knowledge collection</li>
-      <li>Student gets a finished interpretation rather than a thinking process</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 13 — HISTORY: MEDIOCRE SKILL
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 13: History: Getting Warmer" data-slide="hist-mid" tabindex="-1">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">History</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
       <div class="progression-dot dot-mid dot-active"></div>
       <div class="progression-dot"></div>
     </div>
   </div>
-  <h2>Getting Warmer</h2>
-  <div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>When a student asks about a primary source, use the knowledge collection to find it. Walk them through the SOAPS framework. Ask questions instead of giving answers.</div>
-  <div class="why-better">
-    <h4>What improved?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>References the knowledge collection explicitly</li>
-      <li>Names a specific analytical framework</li>
-      <li>Calls for questions over answers</li>
-    </ul>
-  </div>
-  <div style="margin-top: 0.6em;">
-    <h4 style="color: var(--accent-amber);">What's still missing?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No procedure for <em>how</em> to retrieve and present source passages</li>
-      <li>No step-by-step sequence: model may rush through all five SOAPS questions at once</li>
-      <li>No guidance on citing specific passages from uploaded documents as evidence</li>
-    </ul>
+  <h2>Instruction</h2>
+  <div class="prompt-block prompt-mid"><span class="prompt-label">Starting Point</span>When a student asks about a primary source, retrieve it from the knowledge collection and walk them through its rhetorical situation using SOAPS. Ask questions one element at a time rather than summarizing.</div>
+  <div style="margin-top: 1em;">
+    <ol class="stream-list step-hidden" data-step style="line-height: 1.9; padding-left: 1.4em;">
+      <li>Model paraphrases the source instead of quoting from the uploaded document</li>
+      <li>No procedure for retrieving and presenting specific passages as evidence</li>
+      <li>Rushes through all SOAPS dimensions in a single response</li>
+      <li>Student receives a finished reading rather than a structured inquiry</li>
+      <li>No requirement to ground each analytical move in the source&rsquo;s own language</li>
+    </ol>
   </div>
 </div>
 
 <!-- ==========================================
-     SLIDE 14 — HISTORY: GREAT SKILL
+     SLIDE 12 — HISTORY: THE SKILL
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 14: A Skill That Guides Source Analysis" data-slide="hist-good" tabindex="-1">
+<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 12: A Skill That Guides Source Analysis" data-slide="hist-good" tabindex="-1">
   <div class="progression-header">
     <span class="label label-blue" style="margin-bottom: 0;">History</span>
     <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
       <div class="progression-dot dot-mid"></div>
       <div class="progression-dot dot-good dot-active"></div>
     </div>
   </div>
-  <h2>A Skill That Guides Source Analysis</h2>
-  <div class="prompt-block prompt-good" style="font-size: clamp(0.72rem, 1vw, 0.88rem);"><span class="prompt-label">Strong</span><strong style="color: var(--accent-cyan);">Skill: Source Analysis with Knowledge Collection</strong>
-When a student asks about a primary source from the course, follow this procedure:
+  <h2>A Skill That Sources a Document</h2>
+  <div class="prompt-block prompt-good" style="font-size: clamp(0.72rem, 1vw, 0.88rem);"><span class="prompt-label">Strong</span><strong style="color: var(--accent-cyan);">Skill: Sourcing a Primary Document</strong>
+When a student asks about or encounters a primary source from the course, follow this procedure:
 
 <strong style="color: var(--accent-cyan);">Procedure:</strong>
-1. Retrieve the source from the knowledge collection. Quote the relevant passage &mdash; do not paraphrase or summarize.
+1. Retrieve the document from the knowledge collection. Quote a key passage &mdash; do not paraphrase or summarize.
 2. Present the passage in a block quote with its metadata (title, date, author) drawn from the uploaded file.
-3. Ask the student one SOAPS question at a time, starting with Sourcing. Wait for their answer before moving to the next.
-4. After the student responds, point them to a <em>specific phrase</em> in the quoted passage that supports, complicates, or challenges their answer.
-5. Repeat for Occasion, Audience, Purpose, and Significance &mdash; one at a time.
-6. After all five, ask the student to synthesize: &ldquo;What does the full picture reveal about this moment?&rdquo;
+3. Ask: &ldquo;Who created this document, and what was their position or stake?&rdquo; Wait for the student&rsquo;s answer.
+4. After they respond, point to a <em>specific phrase</em> in the quoted passage that supports, complicates, or challenges their answer.
+5. Ask: &ldquo;When and where was this written? What was happening at that moment that shaped what the author could say?&rdquo; Wait.
+6. Ask: &ldquo;Who was the intended audience? How does knowing that change what the document means?&rdquo; Wait.
+7. After all three sourcing moves, ask: &ldquo;Given what you now know about the author, the moment, and the audience &mdash; what can this source tell us, and what can&rsquo;t it?&rdquo;
+
+<strong style="color: var(--accent-cyan);">Format:</strong>
+&gt; [quoted passage from uploaded source]
+&mdash; [Author], [Title], [Date]
+
+[One sourcing question]
+[1&ndash;2 sentences connecting the question to a specific phrase in the passage]
 
 <strong style="color: var(--accent-cyan);">Constraints:</strong>
-&bull; Always quote from the uploaded source. Never paraphrase a primary source document.
+&bull; Always quote from the uploaded source. Never paraphrase a primary document.
 &bull; Never offer an interpretation before the student has attempted one.
 &bull; If the source is not in the knowledge collection, say so. Do not invent content.
-&bull; One question per turn. Do not front-load multiple questions.</div>
+&bull; One question per turn. Do not front-load multiple sourcing questions.
+&bull; Each question must build on the student&rsquo;s previous answer &mdash; do not repeat generic prompts.</div>
 </div>
 
 <!-- ==========================================
@@ -411,89 +402,57 @@ When a student asks about a primary source from the course, follow this procedur
      ========================================== -->
 <div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 15: Example 3 - Reading Visual Artifacts" data-slide="lit-intro" tabindex="-1">
   <span class="section-label">Example 3</span>
-  <h2>Reading Visual Artifacts</h2>
-  <p class="divider-sub">Literature &amp; Cultural Studies</p>
+  <h2>Reading the Frame</h2>
+  <p class="divider-sub">Literature &mdash; Cinematic Mise-en-Sc&egrave;ne</p>
   <div class="divider-line"></div>
 </div>
 
 <!-- ==========================================
-     SLIDE 16 — LITERATURE: BAD SKILL
+     SLIDE 14 — LITERATURE: THE INSTRUCTION
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 16: Literature: The Vague Instruction" data-slide="lit-bad" tabindex="-1">
+<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 14: Literature: The Instruction" data-slide="lit-instruction" tabindex="-1">
   <div class="progression-header">
     <span class="label label-blue" style="margin-bottom: 0;">Literature &amp; Cultural Studies</span>
     <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad dot-active"></div>
-      <div class="progression-dot"></div>
-      <div class="progression-dot"></div>
-    </div>
-  </div>
-  <h2>The Vague Instruction</h2>
-  <div class="prompt-block prompt-bad"><span class="prompt-label">Weak</span>Help students analyze images and visual media.</div>
-  <div style="margin-top: 1em;">
-    <h4 style="color: var(--accent-red);">What goes wrong?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Model describes what it sees rather than guiding the student to look</li>
-      <li>No framework for visual analysis &mdash; the model treats images like text to be summarized</li>
-      <li>No connection between formal elements (composition, lighting, framing) and meaning</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 17 — LITERATURE: MEDIOCRE SKILL
-     ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 17: Literature: Getting Warmer" data-slide="lit-mid" tabindex="-1">
-  <div class="progression-header">
-    <span class="label label-blue" style="margin-bottom: 0;">Literature &amp; Cultural Studies</span>
-    <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
       <div class="progression-dot dot-mid dot-active"></div>
       <div class="progression-dot"></div>
     </div>
   </div>
-  <h2>Getting Warmer</h2>
-  <div class="prompt-block prompt-mid"><span class="prompt-label">Getting There</span>When a student shares an image (a film still, photograph, or artwork), guide them through a visual analysis. Ask about composition, lighting, and framing. Connect these to the image&rsquo;s cultural context.</div>
-  <div class="why-better">
-    <h4>What improved?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>Names specific visual categories to examine</li>
-      <li>Distinguishes between formal elements and cultural meaning</li>
-      <li>Implies a guided process rather than a dump of observations</li>
-    </ul>
-  </div>
-  <div style="margin-top: 0.6em;">
-    <h4 style="color: var(--accent-amber);">What's still missing?</h4>
-    <ul class="stream-list step-hidden" data-step>
-      <li>No step-by-step procedure: the model may address all elements simultaneously</li>
-      <li>No move from description to interpretation &mdash; no scaffolding toward a claim</li>
-      <li>No output format to keep the model from writing the analysis for the student</li>
-    </ul>
+  <h2>Instruction</h2>
+  <div class="prompt-block prompt-mid"><span class="prompt-label">Starting Point</span>When a student shares a film still or visual artifact, guide them from describing formal elements &mdash; composition, lighting, framing &mdash; toward interpreting how those choices construct meaning in context.</div>
+  <div style="margin-top: 1em;">
+    <ol class="stream-list step-hidden" data-step style="line-height: 1.9; padding-left: 1.4em;">
+      <li>Model describes the image for the student instead of directing their attention</li>
+      <li>No scaffolding from observation to formal analysis to interpretive claim</li>
+      <li>Treats all visual elements at once rather than isolating one per turn</li>
+      <li>No mechanism to keep the student doing the looking and the arguing</li>
+      <li>Skips the gap between &ldquo;what&rsquo;s in the frame&rdquo; and &ldquo;what argument it makes&rdquo;</li>
+    </ol>
   </div>
 </div>
 
 <!-- ==========================================
-     SLIDE 18 — LITERATURE: GREAT SKILL
+     SLIDE 15 — LITERATURE: THE SKILL
      ========================================== -->
-<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 18: A Skill That Teaches Visual Reading" data-slide="lit-good" tabindex="-1">
+<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 15: A Skill That Teaches Visual Reading" data-slide="lit-good" tabindex="-1">
   <div class="progression-header">
     <span class="label label-blue" style="margin-bottom: 0;">Literature &amp; Cultural Studies</span>
     <div class="progression-dots" aria-hidden="true">
-      <div class="progression-dot dot-bad"></div>
       <div class="progression-dot dot-mid"></div>
       <div class="progression-dot dot-good dot-active"></div>
     </div>
   </div>
-  <h2>A Skill That Teaches Visual Reading</h2>
+  <h2>A Skill That Reads the Frame</h2>
   <div class="prompt-block prompt-good" style="font-size: clamp(0.72rem, 1vw, 0.88rem);"><span class="prompt-label">Strong</span><strong style="color: var(--accent-cyan);">Skill: Reading Cinematic Images</strong>
-When a student shares a film still, photograph, or visual artifact, follow this procedure:
+When a student uploads a film still, photograph, or visual artifact &mdash; or asks about an image from the knowledge collection &mdash; follow this procedure:
 
 <strong style="color: var(--accent-cyan);">Procedure:</strong>
-1. Ask: &ldquo;What do you notice first?&rdquo; Let the student describe before you respond.
-2. After their description, direct attention to one formal element they haven&rsquo;t mentioned &mdash; composition, lighting, color, framing, depth of field, or gaze. Ask what it does.
-3. Ask how that formal choice shapes the viewer&rsquo;s experience. Move from <em>what</em> is in the frame to <em>how</em> the image is constructed.
-4. Introduce context: ask the student to connect the visual choices to the cultural moment, genre, or argument of the work.
-5. Guide them toward an interpretive claim: &ldquo;Based on what you&rsquo;ve observed, what argument is this image making?&rdquo;
+1. If the student uploaded an image, use it directly. If they reference a visual from the course, retrieve it from the knowledge collection and present it. If the image is not in the collection, say so.
+2. Ask: &ldquo;What do you notice first?&rdquo; Let the student describe before you respond.
+3. After their description, direct attention to one formal element they haven&rsquo;t mentioned &mdash; composition, lighting, color, framing, depth of field, or gaze. Ask what it does.
+4. Ask how that formal choice shapes the viewer&rsquo;s experience. Move from <em>what</em> is in the frame to <em>how</em> the image is constructed.
+5. Introduce context: ask the student to connect the visual choices to the cultural moment, genre, or argument of the work. If relevant context exists in the knowledge collection, quote it.
+6. Guide them toward an interpretive claim: &ldquo;Based on what you&rsquo;ve observed, what argument is this image making?&rdquo;
 
 <strong style="color: var(--accent-cyan);">Framework: Description &rarr; Analysis &rarr; Interpretation</strong>
 &bull; Description: What is literally in the frame?
@@ -503,7 +462,8 @@ When a student shares a film still, photograph, or visual artifact, follow this 
 <strong style="color: var(--accent-cyan);">Constraints:</strong>
 &bull; Never describe the image for the student. Ask them to describe it first.
 &bull; One formal element per turn. Do not list all elements at once.
-&bull; If the student jumps to interpretation before describing, redirect: &ldquo;What specific visual detail supports that reading?&rdquo;</div>
+&bull; If the student jumps to interpretation before describing, redirect: &ldquo;What specific visual detail supports that reading?&rdquo;
+&bull; When drawing on knowledge collection materials for context, quote the relevant passage &mdash; do not paraphrase.</div>
 </div>
 
 <!-- ==========================================
@@ -521,7 +481,7 @@ When a student shares a film still, photograph, or visual artifact, follow this 
 <div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 20: Anatomy of a Skill" data-slide="anatomy" tabindex="-1" style="justify-content: center; align-items: center; text-align: center;">
   <span class="label label-cyan">Structure</span>
   <h2>Anatomy of a Skill</h2>
-  <p style="margin-bottom: 1.4em; max-width: 600px; margin-left: auto; margin-right: auto;">Every skill follows the same basic structure. We&rsquo;ll write yours one piece at a time.</p>
+  <p style="margin-bottom: 1.4em; max-width: 600px; margin-left: auto; margin-right: auto;">Every skill has four parts.</p>
   <ol class="stream-list" style="text-align: left; max-width: 580px; margin: 0 auto; line-height: 1.9; padding-left: 1.4em;">
     <li><strong>Trigger</strong> &mdash; When should this skill activate?</li>
     <li><strong>Procedure</strong> &mdash; What steps does the model follow, in order?</li>
@@ -686,11 +646,11 @@ When a student [specific action or input], follow this procedure:</pre>
   <div class="grid-2" style="margin-top: 1em;">
     <div class="card" style="border-left-color: var(--accent-red);">
       <h4>Putting Everything in the System Prompt</h4>
-      <p>A 2,000-word system prompt with five embedded procedures confuses the model. Decompose workflows into separate skills. The system prompt sets identity; skills handle specific tasks.</p>
+      <p>A long system prompt with embedded procedures confuses the model. Decompose into separate skills. The prompt sets purpose and direction; skills handle specific procedures.</p>
     </div>
     <div class="card" style="border-left-color: var(--accent-red);">
       <h4>Skipping the Format</h4>
-      <p>Without a format spec, the model defaults to its own structure &mdash; usually a long paragraph or numbered list. If you want &ldquo;quote then respond,&rdquo; you have to spell it out.</p>
+      <p>Without a format spec, the model defaults to its own structure. If you want &ldquo;quote then respond,&rdquo; spell it out.</p>
     </div>
     <div class="card" style="border-left-color: var(--accent-amber);">
       <h4>No Wait Points</h4>
@@ -698,7 +658,7 @@ When a student [specific action or input], follow this procedure:</pre>
     </div>
     <div class="card" style="border-left-color: var(--accent-amber);">
       <h4>Forgetting the Knowledge Collection</h4>
-      <p>Skills that reference course materials need explicit instructions to retrieve and quote from the knowledge collection. Without them, the model draws on its own training instead of your documents.</p>
+      <p>Skills that reference course materials need explicit retrieval instructions. Without them, the model paraphrases or draws on its own training instead of your documents.</p>
     </div>
   </div>
 </div>
@@ -710,13 +670,13 @@ When a student [specific action or input], follow this procedure:</pre>
   <div class="content">
     <span class="label label-cyan">Integration</span>
     <h2>Where Skills Live</h2>
-    <p style="margin-bottom: 0.8em;">Skills can be added to your model in two ways, depending on how you want to use them:</p>
+    <p style="margin-bottom: 0.8em;">Skills are attached to a model in <strong>Workspace &rarr; Models</strong>. Once attached, the skill is active for every conversation with that model.</p>
     <div class="card card-cyan" style="margin-bottom: 0.6em;">
-      <h4>Option 1: Append to System Prompt</h4>
-      <p>Add the skill directly to the end of your system prompt in the model card. Best for a single, always-active workflow.</p>
+      <h4>Append to System Prompt</h4>
+      <p>Paste the skill at the end of your system prompt. Best for a single, always-active workflow.</p>
     </div>
     <div class="card" style="margin-bottom: 0.6em;">
-      <h4>Option 2: Knowledge Collection Document</h4>
+      <h4>Upload to Knowledge Collection</h4>
       <p>Save the skill as a <code>.txt</code> file and upload it to your knowledge collection. Best for multiple skills the model can retrieve as needed.</p>
     </div>
     <div class="tip-box">
@@ -731,7 +691,6 @@ When a student [specific action or input], follow this procedure:</pre>
         <div class="flow-node-desc" style="font-size: 0.78rem;">Skill appended to system prompt</div>
         <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Runs on every student interaction</div>
       </div>
-      <!-- OR divider -->
       <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">or</div>
       <!-- Option B -->
       <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px;">
@@ -744,105 +703,86 @@ When a student [specific action or input], follow this procedure:</pre>
 </div>
 
 <!-- ==========================================
-     SLIDE 29 — SECTION DIVIDER: TOOLS
+     TOOLS: INSTRUCTION (BEFORE)
      ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 29: Tools in Open WebUI" data-slide="tools-intro" tabindex="-1">
-  <span class="section-label">Part IV</span>
-  <h2>Tools in Open WebUI</h2>
-  <p class="divider-sub">Extending what the model can <em>do</em>, not just how it responds</p>
-  <div class="divider-line"></div>
+<div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Tools: Instruction" data-slide="tools-instruction" tabindex="-1">
+  <div class="progression-header">
+    <span class="label label-blue" style="margin-bottom: 0;">Tools in Open WebUI</span>
+    <div class="progression-dots" aria-hidden="true">
+      <div class="progression-dot dot-mid dot-active"></div>
+      <div class="progression-dot"></div>
+    </div>
+  </div>
+  <h2>Instruction</h2>
+  <div class="prompt-block prompt-mid"><span class="prompt-label">Starting Point</span>Enable web search and knowledge query on your model so it can look things up during a conversation. Turn on tools in the model settings or per chat.</div>
+  <div style="margin-top: 1em;">
+    <ol class="stream-list step-hidden" data-step style="line-height: 1.9; padding-left: 1.4em;">
+      <li>No distinction between skills (plain text you write) and tools (code the model calls)</li>
+      <li>Doesn&rsquo;t specify <em>which</em> tools to enable or why &mdash; turning everything on adds noise</li>
+      <li>No guidance on model selection: smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently</li>
+      <li>No connection between tools and the skill that should use them</li>
+      <li>Student-facing behavior unchanged &mdash; enabling a tool doesn&rsquo;t mean the model knows when to use it</li>
+    </ol>
+  </div>
 </div>
 
 <!-- ==========================================
-     SLIDE 30 — WHAT IS A TOOL?
+     TOOLS: THE FULL PICTURE (AFTER)
      ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 30: What Is a Tool?" data-slide="what-is-tool" tabindex="-1">
-  <div class="content" style="flex: 0 0 45%;">
-    <span class="label label-cyan">The Other Half</span>
-    <h2>What Is a Tool?</h2>
-    <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a procedure you write in plain language. A <strong>tool</strong> is a capability the model can call on during a conversation &mdash; searching the web, querying your knowledge collection, executing code, or generating an image.</p>
-    <blockquote>Skills tell the model <strong>how to respond</strong>. Tools give it <strong>new abilities</strong> it doesn&rsquo;t have on its own.</blockquote>
-    <div class="tip-box" style="margin-top: 1em;">
-      <p><strong>Where they live:</strong> Tools are managed in <strong>Workspace &rarr; Tools</strong> and can be attached to any model card, just like a knowledge collection.</p>
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Tools: The Full Picture" data-slide="tools-full" tabindex="-1">
+  <div class="content" style="flex: 0 0 48%;">
+    <div class="progression-header">
+      <span class="label label-blue" style="margin-bottom: 0;">Tools in Open WebUI</span>
+      <div class="progression-dots" aria-hidden="true">
+        <div class="progression-dot dot-mid"></div>
+        <div class="progression-dot dot-good dot-active"></div>
+      </div>
+    </div>
+    <h2>Skills vs. Tools</h2>
+    <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a document you write in plain language &mdash; no code. A <strong>tool</strong> is code &mdash; a function the model calls to do something it can&rsquo;t do with language alone.</p>
+    <div class="card card-cyan" style="margin-bottom: 0.5em;">
+      <h4>Per Chat</h4>
+      <p>Click <strong>+</strong> in the message bar and toggle tools on. Good for experimenting.</p>
+    </div>
+    <div class="card" style="margin-bottom: 0.5em;">
+      <h4>Per Model</h4>
+      <p><strong>Workspace &rarr; Models &rarr; Tools</strong>. Every conversation with that model gets access.</p>
+    </div>
+    <div class="tip-box">
+      <p><strong>Caveat:</strong> Smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently. Use a larger model like Kimi K2.5 or GLM 5 for reliable tool use.</p>
     </div>
   </div>
   <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vh, 32px) clamp(14px, 1.8vw, 24px); justify-content: center;">
-    <div style="display: flex; flex-direction: column; gap: clamp(10px, 1.5vh, 16px); width: 100%; max-width: 380px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column; gap: clamp(8px, 1.2vh, 14px); width: 100%; max-width: 380px; margin: 0 auto;">
       <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px;">
-        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-cyan);">Skill</div>
-        <div class="flow-node-desc" style="font-size: 0.78rem;">&ldquo;Quote the excerpt, name one issue, ask one question&rdquo;</div>
-        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Written by you in plain language</div>
+        <div class="flow-node-label" style="font-size: 0.88rem; color: var(--accent-cyan);">Skill <span style="font-weight: 400; font-size: 0.72rem; opacity: 0.6;">(plain text)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.75rem;">&ldquo;Walk through stasis one question at a time&rdquo;</div>
       </div>
-      <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
+      <div style="text-align: center; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
       <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px;">
-        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-blue);">Tool</div>
-        <div class="flow-node-desc" style="font-size: 0.78rem;">Search the web, query files, run code, generate images</div>
-        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Built-in or installed from the community library</div>
+        <div class="flow-node-label" style="font-size: 0.88rem; color: var(--accent-blue);">Tool <span style="font-weight: 400; font-size: 0.72rem; opacity: 0.6;">(code)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.75rem;">Search the web, query files, run code, generate images</div>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 31 — TOOLS WORTH KNOWING
-     ========================================== -->
-<div class="slide layout-grid" role="group" aria-roledescription="slide" aria-label="Slide 31: Tools Worth Knowing" data-slide="tools-grid" tabindex="-1">
-  <h2>Built-In Tools</h2>
-  <p style="max-width: 620px; margin: 0 auto 1em; color: var(--text-muted);">When enabled, the Sandbox models can call these tools automatically during a conversation.</p>
-  <div class="grid-2">
-    <div class="card card-cyan">
-      <h4>Web Search</h4>
-      <p>Search the public web and pull in current information. Useful when a student&rsquo;s question goes beyond your uploaded materials.</p>
-    </div>
-    <div class="card">
-      <h4>Knowledge Query</h4>
-      <p>Search your knowledge collection by content, not just keyword. The model can look up specific passages from your uploaded files mid-conversation.</p>
-    </div>
-    <div class="card card-navy">
-      <h4>Code Execution</h4>
-      <p>Run code in a sandboxed environment. Relevant for data analysis, statistics, or any course where students work with structured data.</p>
-    </div>
-    <div class="card card-cyan">
-      <h4>Image Generation</h4>
-      <p>Generate images from text descriptions. Could support creative assignments, visual brainstorming, or illustrating concepts.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 32 — HOW TO ENABLE TOOLS
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 32: How to Enable Tools" data-slide="enable-tools" tabindex="-1">
-  <div class="content">
-    <span class="label label-cyan">Two Ways</span>
-    <h2>How to Enable Tools</h2>
-    <p style="margin-bottom: 0.8em;">You can turn tools on per conversation or attach them permanently to a model card.</p>
-    <div class="card card-cyan" style="margin-bottom: 0.6em;">
-      <h4>Per Chat</h4>
-      <p>Click the <strong>+</strong> icon in the message input area. Toggle the tools you want for that conversation. Good for experimenting.</p>
-    </div>
-    <div class="card" style="margin-bottom: 0.6em;">
-      <h4>Per Model</h4>
-      <p>Open your model card in <strong>Workspace &rarr; Models</strong>. Check the tools you want in the <strong>Tools</strong> section and save. Every conversation with that model will have access.</p>
-    </div>
-    <div class="tip-box">
-      <p><strong>Community tools:</strong> The Sandbox includes built-in tools, but additional tools can be imported from the <strong>Open WebUI community library</strong>. Ask your Sandbox admin about what&rsquo;s available.</p>
-    </div>
-  </div>
-  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(16px, 2.5vw, 32px); justify-content: center;">
-    <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.8vh, 20px); width: 100%; max-width: 380px; margin: 0 auto;">
-      <!-- Per chat -->
-      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px;">
-        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-cyan);">Per Chat</div>
-        <div class="flow-node-desc" style="font-size: 0.78rem;">Click <strong>+</strong> in the message bar &rarr; toggle tools on</div>
-        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Active for this conversation only</div>
-      </div>
-      <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">or</div>
-      <!-- Per model -->
-      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px;">
-        <div class="flow-node-label" style="font-size: 0.92rem; color: var(--accent-blue);">Per Model</div>
-        <div class="flow-node-desc" style="font-size: 0.78rem;">Workspace &rarr; Models &rarr; check tools &rarr; Save</div>
-        <div class="flow-node-desc" style="font-size: 0.68rem; opacity: 0.6; margin-top: 4px;">Active for every conversation with this model</div>
+      <div style="border-top: 1px solid rgba(59, 111, 181, 0.15); padding-top: clamp(8px, 1vh, 12px); margin-top: clamp(4px, 0.5vh, 8px);">
+        <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Built-in tools</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 8px 10px;">
+            <div style="font-size: 0.78rem; font-weight: 600;">Web Search</div>
+            <div style="font-size: 0.65rem; opacity: 0.6; margin-top: 2px;">Current information beyond your uploads</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(59, 111, 181, 0.25); border-radius: 8px; padding: 8px 10px;">
+            <div style="font-size: 0.78rem; font-weight: 600;">Knowledge Query</div>
+            <div style="font-size: 0.65rem; opacity: 0.6; margin-top: 2px;">Search uploaded files by content</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(11, 29, 58, 0.2); border-radius: 8px; padding: 8px 10px;">
+            <div style="font-size: 0.78rem; font-weight: 600;">Code Execution</div>
+            <div style="font-size: 0.65rem; opacity: 0.6; margin-top: 2px;">Run code in a sandbox</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 8px 10px;">
+            <div style="font-size: 0.78rem; font-weight: 600;">Image Generation</div>
+            <div style="font-size: 0.65rem; opacity: 0.6; margin-top: 2px;">Create images from descriptions</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1024,7 +964,7 @@ Constraints:
 <nav id="nav-bar" aria-label="Slide navigation">
   <button id="arrow-prev" class="arrow-btn" aria-label="Previous slide" title="Previous slide (&larr;)">&#8592;</button>
   <span class="nav-info"><strong id="nav-current">1</strong> / <span id="nav-total"></span></span>
-  <div id="scrubber-container" class="scrubber-container" role="slider" aria-label="Slide progress" aria-valuemin="1" aria-valuemax="33" aria-valuenow="1" aria-valuetext="Slide 1 of 33" tabindex="0">
+  <div id="scrubber-container" class="scrubber-container" role="slider" aria-label="Slide progress" aria-valuemin="1" aria-valuemax="34" aria-valuenow="1" aria-valuetext="Slide 1 of 33" tabindex="0">
     <div class="scrubber-track">
       <div id="scrubber-progress" class="scrubber-progress"></div>
       <div class="scrubber-thumb">
