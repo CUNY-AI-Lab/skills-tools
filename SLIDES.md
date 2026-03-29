@@ -1,6 +1,6 @@
 # Customizing Skills & Tools -- Slide Deck Content
 
-> CUNY AI Lab Sandbox Workshop (28 slides)
+> CUNY AI Lab Sandbox Workshop (27 slides)
 > Source: `index.html`
 
 ---
@@ -267,14 +267,7 @@ Template with copy button.
 
 ---
 
-## Slide 22 -- Section Divider: Integration (`layout-divider`)
-
-**Section label:** Integration
-Skills & Tools
-
----
-
-## Slide 23 -- Activating Skills (`layout-content`)
+## Slide 22 -- Activating Skills (`layout-content`)
 
 **Label:** Skills in Open WebUI
 
@@ -287,7 +280,7 @@ A skill is worth making when the move has a **repeatable structure** -- trigger,
 
 ---
 
-## Slide 24 -- Skills vs. Tools (`layout-split`)
+## Slide 23 -- Skills vs. Tools (`layout-split`)
 
 **Label:** Tools in Open WebUI
 
@@ -302,7 +295,7 @@ A **skill** is a document you write in markdown or plain text, whereas a **tool*
 
 ---
 
-## Slide 25 -- Section Divider: Hands-On (`layout-divider`)
+## Slide 24 -- Section Divider: Hands-On (`layout-divider`)
 
 **Section label:** Hands-On
 Write Your First Skill
@@ -310,7 +303,7 @@ Pick one pedagogical move from your course and turn it into a step-by-step recip
 
 ---
 
-## Slide 26 -- Choose Your Move (`layout-content`, centered)
+## Slide 25 -- Choose Your Move (`layout-content`, centered)
 
 **Label:** Exercise
 
@@ -323,7 +316,7 @@ Which is closest to the skill you want to build?
 
 ---
 
-## Slide 27 -- Write Your Skill (`layout-split`)
+## Slide 26 -- Write Your Skill (`layout-split`)
 
 **Label:** Draft It
 
@@ -337,7 +330,7 @@ Full template with copy button.
 
 ---
 
-## Slide 28 -- Add Your Skill (`layout-split`)
+## Slide 27 -- Add Your Skill (`layout-split`)
 
 **Label:** Integrate It
 
@@ -354,7 +347,7 @@ Connect the skill you wrote to the model you built in the previous workshops.
 
 ---
 
-## Slide 29 -- Workshop Complete (`layout-full-dark closing-slide`)
+## Slide 28 -- Workshop Complete (`layout-full-dark closing-slide`)
 
 | Date | Session | Description |
 |------|---------|-------------|
