@@ -85,9 +85,9 @@ What models won't do without a skill:
 
 ---
 
-## Slide 7 -- Section Divider: Composition (`layout-divider`)
+## Slide 7 -- Section Divider: Example 1 (`layout-divider`)
 
-**Section label:** Part I: Example 1
+**Section label:** Example 1
 Establishing Stasis
 Composition -- Stasis Theory
 
@@ -212,8 +212,8 @@ Framework: Description → Analysis → Interpretation
 
 ## Slide 16 -- Section Divider: Building Blocks (`layout-divider`)
 
-**Section label:** Part II
-Building Your Own Skills
+**Section label:** Building Blocks
+Writing Your Own Skills
 
 ---
 
@@ -267,9 +267,9 @@ Template with copy button.
 
 ---
 
-## Slide 22 -- Section Divider: Skills & Tools (`layout-divider`)
+## Slide 22 -- Section Divider: Integration (`layout-divider`)
 
-**Section label:** Part III
+**Section label:** Integration
 Skills & Tools
 
 ---
@@ -304,7 +304,7 @@ A **skill** is a document you write in markdown or plain text, whereas a **tool*
 
 ## Slide 25 -- Section Divider: Hands-On (`layout-divider`)
 
-**Section label:** Part V
+**Section label:** Hands-On
 Write Your First Skill
 Pick one pedagogical move from your course and turn it into a step-by-step recipe.
 
