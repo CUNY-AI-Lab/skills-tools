@@ -28,7 +28,7 @@ Core presentation framework. Manages slide transitions, step-reveal progressions
 - **Module communication:** Calls `window.updateCarousels()`, `window.startCarousel()`, `window.pauseCarousel()`, `window.updateScrubber()` — all defined by sibling JS files.
 
 ### CSS Design System (`css/styles.css`)
-1584-line design system with CSS custom properties. Key tokens:
+~1700-line design system with CSS custom properties. Key tokens:
 - `--accent-cyan: #4ECDC4` (primary accent), `--accent-blue: #3B6FB5`, `--accent-red: #C05B6E`, `--accent-amber: #B08840`, `--accent-green: #5B8A6F`
 - `--dark-bg: #0B1D3A` (navy), `--bg-light: #F0F4F8`
 - Typography: Fraunces (headings), DM Sans (body), JetBrains Mono (code)
@@ -69,19 +69,27 @@ Core presentation framework. Manages slide transitions, step-reveal progressions
 - `tabs.js` — Simple tab switching via `switchTab(event, tabName)`.
 
 ### Responsive Strategy
-Viewport-relative units via `clamp()` throughout. Breakpoints at 1024px (tablet) and 768px (mobile) in `responsive.css`. Split layouts stack vertically on mobile.
+Viewport-relative units via `clamp()` throughout. Breakpoints at 1024px (tablet) and 768px (mobile) in `responsive.css`. Split layouts stack vertically on mobile. A `@media (min-height: 900px)` rule in `styles.css` shifts `layout-split` content and stage panels to top-aligned on tall viewports to prevent floating-in-whitespace.
 
-## Content Structure (37 slides)
+## Content Structure (30 slides)
 
-- **1–3:** Title, roadmap, recap of workshops 1–2
-- **4–6:** What is a skill, why it matters (before/after), the gap skills fill
-- **7–10:** Composition example (bad → mid → good progression) — targeted writing feedback
-- **11–14:** History example — source analysis with knowledge collection
-- **15–18:** Literature example — reading cinematic images
-- **19–24:** Building blocks (trigger, procedure, format, constraints) with copyable templates
-- **25–28:** Skills worth building, common pitfalls, where skills live
-- **29–32:** Open WebUI Tools — what they are, built-in tools, how to enable per-chat or per-model
-- **33–37:** Hands-on exercise (choose a move, write the skill, add to model), closing
+- **1–3:** Title, roadmap, refresher activity (verify setup, name one move)
+- **4–6:** What is a skill, why it matters (stasis theory before/after), the gap skills fill
+- **7–9:** Composition example (before → after) — establishing stasis via stasis theory
+- **10–12:** History example (before → after) — vetting a source via the sourcing heuristic
+- **13–15:** Literature example (before → after) — reading the frame via cinematic mise-en-scène
+- **16–20:** Building blocks (anatomy, trigger, procedure, format) with copyable templates
+- **21–23:** Strategy (skills worth building + pitfalls collapsed into one step-reveal slide), where skills live
+- **24–25:** Tools in Open WebUI (before → after pattern, Gemma 3 27B caveat, Kimi K2.5/GLM 5 recommended)
+- **26–30:** Hands-on exercise (choose a move, write the skill, add to model), closing
+
+**Example progressions** use a 2-dot pattern (before → after) instead of the original 3-dot (bad → mid → good). Each "before" slide shows a mid-quality prompt with a numbered list of gaps revealed on advance. Skills have three components: trigger, procedure, format.
+
+## Companion Documents
+
+- `SLIDES.md` — Plain-text mirror of all slide content, synced manually after HTML changes
+- `RESEARCH.md` — Research brief on Open WebUI skills/tools for workshop prep
+- `COLLAPSEME.md` — Proposals for further slide collapses with current→proposed copy tables
 
 ## Shared Assets
 
