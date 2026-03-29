@@ -278,7 +278,7 @@ Skills & Tools
 
 **Label:** Skills in Open WebUI
 
-A skill is worth building when the move has a **repeatable structure** -- trigger, steps, output shape -- that you want the model to follow every time.
+A skill is worth making when the move has a **repeatable structure** -- trigger, steps, output shape -- that you want the model to follow every time.
 
 - **Toggle in the Model Card** -- Open **Workspace → Models**, find your model, and toggle the skill on. It activates automatically in every chat with that model.
 - **Paste at End of System Prompt** -- Copy the skill text and append it to your system prompt. Best when you want a single, always-active workflow.
