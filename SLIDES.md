@@ -26,21 +26,15 @@ Developed by Stefano Morello and Zach Muhlbauer
 
 ---
 
-## Slide 3 -- Before We Build (`layout-split`, step-reveal 1–3)
+## Slide 3 -- Pre-Flight (`layout-content`, centered, step-reveal 1–3)
 
 **Label:** Quick Check
 
 Verify your setup, then identify the move you'll build today.
 
-**Step 1:** System Prompt -- Open your model. Can you identify the role it plays, the constraints you set, and how it addresses students?
-
-**Step 2:** Knowledge Collection -- Is a collection attached? Does your system prompt tell the model when and how to reference it?
-
-**Step 3:** Name One Move -- Think of a specific sequence you'd want the model to follow -- not "help with writing" but something like: *read the student's sentence, identify one issue, ask a question, wait.*
-
-> Hold onto that move. As we look at examples today, notice how each one breaks a procedure into explicit steps the model repeats with every student.
-
-**Stage:** Vertical stack of three flow nodes (System Prompt ✓ → Knowledge Collection ✓ → Your Skill [Today badge]), each synced with corresponding step reveal.
+1. **System Prompt** -- What role and constraints did you set? Have you revised or tested it?
+2. **Knowledge Collection** -- Is it attached? Does the model draw on it when you test?
+3. **Name One Pedagogical Move** -- A move with a repeatable structure: *quote a passage, ask a question, narrow focus, repeat.*
 
 ---
 
@@ -48,9 +42,9 @@ Verify your setup, then identify the move you'll build today.
 
 **Label:** The Basics
 
-A **skill** is a plain-text markdown document that teaches the model how to navigate a specific task. When activated, it injects detailed instructions into the system prompt that the model follows in context.
+A **skill** is a structured procedure you write in plain language -- no code. It tells the model how to handle a task your system prompt can't cover on its own.
 
-> Think of it as a **recipe**: a step-by-step procedure for a move you'd make as an instructor -- establishing stasis, sourcing a document, reading a cinematic frame -- written so the model can execute it consistently.
+> Think of it as a **recipe** for a move you'd make as an instructor -- establishing stasis, sourcing a document, reading a cinematic frame -- written so the model executes it consistently.
 
 **Key distinction:** The system prompt sets general behavior. A skill decomposes a *specific* task into steps the model won't follow unprompted.
 
@@ -62,7 +56,7 @@ A **skill** is a plain-text markdown document that teaches the model how to navi
 
 **Label:** Why Bother?
 
-Your system prompt says "help students develop research topics." A student types: "I want to write about social media and mental health."
+A student types: "I want to write about social media and mental health."
 
 **Without a Skill** *(appears first)*
 "That's a great topic! You could narrow it by focusing on a specific platform, age group, or type of mental health impact. Consider looking at recent studies on Instagram and anxiety, or TikTok and body image. You'll also want a clear thesis statement."
@@ -78,16 +72,16 @@ Your system prompt says "help students develop research topics." A student types
 
 **Label:** The Problem
 
-Models can do many things well -- but they don't do them *unless you explicitly instruct them to*. A system prompt tells the model what kind of tool it is. But certain moves require a **plan, formula, or recipe** to execute consistently.
+Models can do many things, but not unless you spell it out. Certain moves need a **step-by-step recipe** to work consistently.
 
 What models won't do without a skill:
-- Walk a student through stasis theory one question at a time, narrowing with each turn
-- Quote a specific passage from an uploaded source before asking an analytical question
-- Ask *one* focused question instead of listing five observations
-- Build on what the student just said rather than repeating a generic prompt
-- Scaffold from description to analysis to interpretation across multiple turns
+- Walk through stasis theory one question at a time
+- Quote a passage from an uploaded source before asking a question
+- Ask *one* focused question instead of listing five
+- Build on what the student just said
+- Scaffold from description to analysis to interpretation
 
-**Stage:** Diagram showing System Prompt Alone ("Help students develop research topics" / knows *what*, not *how*) → System Prompt + Skill ("Ask one stasis question, build on the student's last answer" / knows *what* and *how*)
+**Stage:** Diagram showing System Prompt Alone (knows *what*, not *how*) → System Prompt + Skill (knows *what* and *how*)
 
 ---
 
@@ -122,11 +116,11 @@ What's missing *(step-reveal)*:
 
 Procedure:
 1. Ask the student to state their topic in one sentence. Do not evaluate or refine it yet.
-2. Conjecture: "What has happened or is happening that makes this worth investigating?" Wait for their answer. Use what they say to sharpen the next question.
+2. Conjecture: "What has happened or is happening that makes this worth investigating?" Wait. Use what they say to sharpen the next question.
 3. Definition: Point to a key term in their response. "How are you defining [term]? What kind of problem is this -- legal, ethical, empirical, cultural?" Wait.
-4. Quality: "What's at stake, and for whom? What makes this serious enough to argue about in an 8-page paper?" If their scope is too broad, ask them to name one specific population or context. Wait.
-5. Policy: "What should be done, and by whom?" Help the student see whether their argument is making a factual claim, a definitional claim, a value judgment, or a policy proposal.
-6. Ask: "Which of these four questions does your argument most need to answer?" Guide them toward a thesis grounded in that stasis.
+4. Quality: "What's at stake, and for whom?" If scope is too broad, ask them to name one specific population or context. Wait.
+5. Policy: "What should be done, and by whom?" Help the student see whether their argument is factual, definitional, evaluative, or policy-based.
+6. Ask: "Which of these four questions does your argument most need to answer?" Guide toward a thesis grounded in that stasis.
 
 Format:
 Your topic: [student's stated topic]
@@ -134,11 +128,11 @@ Your topic: [student's stated topic]
 [1-2 sentences explaining why this question matters for their project]
 
 Constraints:
-- One stasis per turn. Do not list all four at once.
-- Never rewrite the student's topic. Ask questions that help them rewrite it themselves.
-- Each question must build on a specific distinction or clarification the student made in their previous response -- do not repeat generic stasis prompts.
-- If the student says "I don't know," point them back to a phrase from their earlier response and ask what it assumes.
-- After all four stases, always ask the student to choose which stasis their argument lives in -- do not choose for them.
+- One stasis per turn.
+- Never rewrite the student's topic.
+- Each question must build on the student's previous response.
+- If the student says "I don't know," point them back to a phrase from their earlier response.
+- After all four stases, ask the student to choose which stasis their argument lives in.
 
 ---
 
@@ -172,26 +166,20 @@ What's missing *(step-reveal)*:
 **Skill: Sourcing a Primary Document**
 
 Procedure:
-1. Retrieve the document from the knowledge collection. Quote a key passage -- do not paraphrase or summarize.
-2. Present the passage in a block quote with its metadata (title, date, author) drawn from the uploaded file.
-3. Ask: "Who created this document, and what was their position or stake?" Wait for the student's answer.
-4. After they respond, point to a *specific phrase* in the quoted passage that supports, complicates, or challenges their answer.
-5. Ask: "When and where was this written? What was happening at that moment that shaped what the author could say?" Wait.
-6. Ask: "Who was the intended audience? How does knowing that change what the document means?" Wait.
-7. After all three sourcing moves, ask: "Given what you now know about the author, the moment, and the audience -- what can this source tell us, and what can't it?"
-
-Format:
-> [quoted passage from uploaded source]
--- [Author], [Title], [Date]
-[One sourcing question]
-[1-2 sentences connecting the question to a specific phrase in the passage]
+1. Retrieve the document from the knowledge collection. Quote a key passage -- do not paraphrase.
+2. Present the passage in a block quote with metadata (title, date, author).
+3. Ask: "Who created this document, and what was their position or stake?" Wait.
+4. Point to a *specific phrase* in the passage that supports, complicates, or challenges their answer.
+5. Ask: "When and where was this written? What was happening that shaped what the author could say?" Wait.
+6. Ask: "Who was the intended audience? How does that change what the document means?" Wait.
+7. Ask: "Given what you now know about the author, the moment, and the audience -- what can this source tell us, and what can't it?"
 
 Constraints:
 - Always quote from the uploaded source. Never paraphrase a primary document.
 - Never offer an interpretation before the student has attempted one.
-- If the source is not in the knowledge collection, say so. Do not invent content.
-- One question per turn. Do not front-load multiple sourcing questions.
-- Each question must build on the student's previous answer -- do not repeat generic prompts.
+- If the source is not in the knowledge collection, say so.
+- One question per turn.
+- Each question must build on the student's previous answer.
 
 ---
 
@@ -225,23 +213,20 @@ What's missing *(step-reveal)*:
 **Skill: Reading Cinematic Images**
 
 Procedure:
-1. If the student uploaded an image, use it directly. If they reference a visual from the course, retrieve it from the knowledge collection and present it. If the image is not in the collection, say so.
+1. If the student uploaded an image, use it directly. If they reference a visual from the course, retrieve it from the knowledge collection. If not in the collection, say so.
 2. Ask: "What do you notice first?" Let the student describe before you respond.
-3. After their description, direct attention to one formal element they haven't mentioned -- composition, lighting, color, framing, depth of field, or gaze. Ask what it does.
-4. Ask how that formal choice shapes the viewer's experience. Move from *what* is in the frame to *how* the image is constructed.
-5. Introduce context: ask the student to connect the visual choices to the cultural moment, genre, or argument of the work. If relevant context exists in the knowledge collection, quote it.
-6. Guide them toward an interpretive claim: "Based on what you've observed, what argument is this image making?"
+3. Direct attention to one formal element they haven't mentioned -- composition, lighting, color, framing, depth of field, or gaze. Ask what it does.
+4. Ask how that formal choice shapes the viewer's experience. Move from *what* to *how*.
+5. Ask the student to connect the visual choices to the cultural moment, genre, or argument. If relevant context exists in the knowledge collection, quote it.
+6. Guide toward an interpretive claim: "Based on what you've observed, what argument is this image making?"
 
 Framework: Description → Analysis → Interpretation
-- Description: What is literally in the frame?
-- Analysis: How do formal elements (light, angle, placement) create meaning?
-- Interpretation: What claim can the student make, grounded in visual evidence?
 
 Constraints:
-- Never describe the image for the student. Ask them to describe it first.
-- One formal element per turn. Do not list all elements at once.
+- Never describe the image for the student.
+- One formal element per turn.
 - If the student jumps to interpretation before describing, redirect: "What specific visual detail supports that reading?"
-- When drawing on knowledge collection materials for context, quote the relevant passage -- do not paraphrase.
+- Quote from knowledge collection materials when providing context.
 
 ---
 
@@ -252,11 +237,11 @@ Building Your Own Skills
 
 ---
 
-## Slide 17 -- Anatomy of a Skill (`layout-content`)
+## Slide 17 -- Anatomy of a Skill (`layout-content`, centered)
 
 **Label:** Structure
 
-Every skill follows the same basic structure. We'll write yours one piece at a time.
+Every skill has four parts.
 
 1. **Trigger** -- When should this skill activate?
 2. **Procedure** -- What steps does the model follow, in order?
@@ -267,74 +252,49 @@ Every skill follows the same basic structure. We'll write yours one piece at a t
 
 ## Slide 18 -- Component 1: Trigger (`layout-split`)
 
-Define when this skill should activate. A clear trigger keeps the model from applying the wrong procedure to the wrong task.
+Define when this skill should activate.
 
 - What student action starts this workflow?
 - Does it activate when they share a draft? Ask about a source? Upload an image?
 - Should it run automatically, or only when the student asks?
 
-Template:
-```
-Skill: [Skill Name]
-When a student [specific action or input], follow this procedure:
-```
+Template with copy button.
 
 ---
 
 ## Slide 19 -- Component 2: Procedure (`layout-split`)
 
-The core of every skill. Numbered steps that tell the model exactly what to do, in what order. This is what turns a vague instruction into a reliable workflow.
+The core of every skill. Numbered steps that tell the model what to do, in what order, and when to wait.
 
 - What should happen first? What comes next?
 - Where should the model wait for the student before continuing?
 - Should it quote, cite, or reference specific materials?
 
-Template:
-```
-Procedure:
-1. [First step -- what does the model do or ask?]
-2. [After the student responds, what comes next?]
-3. [Continue the sequence -- include wait points]
-4. [Final step -- synthesis, next action, or handoff]
-```
+Template with copy button.
 
 ---
 
 ## Slide 20 -- Component 3: Format (`layout-split`)
 
-Specify what the output should look like. Format instructions are what make the model quote student writing in block quotes, respond underneath, or keep responses to one question at a time.
+Specify what the output should look like. Without a format, the model structures responses however it wants.
 
 - Should the model quote the student's text?
 - Should each response end with a question?
 - How long should a response be?
 
-Template:
-```
-Format:
-> [quoted excerpt from student work or source document]
-
-[1-2 sentences: what you observe]
-[One question for the student]
-```
+Template with copy button.
 
 ---
 
 ## Slide 21 -- Component 4: Constraints (`layout-split`)
 
-What should the model *never* do within this skill? Skill-level constraints are more specific than system-prompt constraints. They address the particular ways this workflow could go wrong.
+What should the model *never* do within this skill? Constraints address the specific ways this workflow can go wrong.
 
 - What shortcut will the model take if you don't prevent it?
 - How should it redirect when students push back?
 - Should it limit itself to one question or one observation per turn?
 
-Template:
-```
-Constraints:
-- Never [specific shortcut to prevent].
-- One [question / observation / element] per turn.
-- If the student [common deflection], redirect by [specific alternative].
-- Always [quote / cite / reference] from [source type] before responding.
-```
+Template with copy button.
 
 ---
 
@@ -347,10 +307,10 @@ Strategies & Pitfalls
 
 ## Slide 23 -- Skills Worth Building (`layout-grid`)
 
-- **Excerpt-and-Respond Feedback:** Quote a passage from the student's draft in a block quote. Name one observation directly below it. Ask one question. Stop.
-- **Source-Grounded Q&A:** When a student asks a question answerable from the knowledge collection, retrieve and quote the relevant passage before responding. Cite the document by name.
-- **Rubric Walk-Through:** Walk the student through one rubric criterion at a time. For each, quote the criterion, ask the student to evaluate their own work against it, and discuss before moving on.
-- **One-Question Concision:** Respond with a single focused question. No preamble, no list of observations. If the model would normally say five things, force it to choose the one that matters most.
+- **Excerpt-and-Respond Feedback:** Quote a passage, name one observation, ask one question. Stop.
+- **Source-Grounded Q&A:** Retrieve and quote from the knowledge collection before answering. Cite by name.
+- **Rubric Walk-Through:** One criterion at a time. Quote it, ask the student to self-evaluate, discuss before moving on.
+- **One-Question Concision:** Single focused question. No preamble, no list. Force the model to choose what matters most.
 
 ---
 
@@ -358,10 +318,10 @@ Strategies & Pitfalls
 
 **Label:** Watch Out
 
-- **Putting Everything in the System Prompt:** A 2,000-word system prompt with five embedded procedures confuses the model. Decompose workflows into separate skills. The system prompt sets identity; skills handle specific tasks.
-- **Skipping the Format:** Without a format spec, the model defaults to its own structure -- usually a long paragraph or numbered list. If you want "quote then respond," you have to spell it out.
+- **Putting Everything in the System Prompt:** A long system prompt with embedded procedures confuses the model. Decompose into separate skills. The prompt sets purpose and direction; skills handle specific procedures.
+- **Skipping the Format:** Without a format spec, the model defaults to its own structure. If you want "quote then respond," spell it out.
 - **No Wait Points:** If your procedure has five steps, the model may execute all five in one response. Explicit "Stop. Wait for the student to respond" instructions force turn-taking.
-- **Forgetting the Knowledge Collection:** Skills that reference course materials need explicit instructions to retrieve and quote from the knowledge collection. Without them, the model draws on its own training instead of your documents.
+- **Forgetting the Knowledge Collection:** Skills that reference course materials need explicit retrieval instructions. Without them, the model paraphrases or draws on training data instead of your documents.
 
 ---
 
@@ -369,13 +329,12 @@ Strategies & Pitfalls
 
 **Label:** Integration
 
-Two options:
-- **Option 1: Append to System Prompt** -- Add the skill directly to the end of your system prompt in the model card. Best for a single, always-active workflow.
-- **Option 2: Knowledge Collection Document** -- Save the skill as a `.txt` file and upload it to your knowledge collection. Best for multiple skills the model can retrieve as needed.
+Two ways to add a skill to your model:
 
-**Key principle:** If the model should *always* follow the skill, put it in the system prompt. If it should follow the skill only when relevant, put it in the knowledge collection where retrieval handles the routing.
+- **Option 1: Attach to Model** -- In Workspace → Models, use the skill toggle to attach it directly. Always active for every conversation with that model.
+- **Option 2: Enable Per Chat** -- Click + in the message bar and toggle the skill on. Good for testing or selective use.
 
-**Stage:** Diagram showing "Always Active" (skill appended to system prompt) vs. "Retrieved When Needed" (skill saved as .txt in knowledge collection)
+**Stage:** Diagram showing "Always Active" (skill attached to model) vs. "Per Chat" (toggled on in individual conversations)
 
 ---
 
@@ -387,8 +346,8 @@ Two options:
 
 What's missing *(step-reveal)*:
 1. No distinction between skills (plain text you write) and tools (code the model calls)
-2. Doesn't specify *which* tools to enable or why -- turning everything on adds noise
-3. No guidance on model selection: smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently
+2. Doesn't specify *which* tools to enable or why
+3. No guidance on model selection: smaller models handle tool calling inconsistently
 4. No connection between tools and the skill that should use them
 5. Student-facing behavior unchanged -- enabling a tool doesn't mean the model knows when to use it
 
@@ -398,18 +357,14 @@ What's missing *(step-reveal)*:
 
 **Label:** Tools in Open WebUI (progression: 2 of 2)
 
-A **skill** is a plain-text markdown document you write. A **tool** is code -- a function the model calls to do something it can't do with language alone.
+A **skill** is a document you write in plain language. A **tool** is code -- a function the model calls to do something it can't do with language alone.
 
-**Per Chat:** Click **+** in the message bar and toggle tools on. Good for experimenting.
-**Per Model:** **Workspace → Models → Tools**. Every conversation with that model gets access.
+**Per Chat:** Click + in the message bar and toggle tools on. Good for experimenting.
+**Per Model:** Workspace → Models → Tools. Every conversation with that model gets access.
 
 **Caveat:** Smaller models (e.g. Gemma 3 27B) handle tool calling inconsistently. Use a larger model like Kimi K2.5 or GLM 5 for reliable tool use.
 
-**Stage:** Skill (plain text) vs. Tool (code) diagram + 2×2 grid of built-in tools:
-- **Web Search** -- Current information beyond your uploads
-- **Knowledge Query** -- Search uploaded files by content
-- **Code Execution** -- Run code in a sandbox
-- **Image Generation** -- Create images from descriptions
+**Stage:** Skill (plain text) vs. Tool (code) diagram + 2×2 grid of built-in tools
 
 ---
 
@@ -417,15 +372,14 @@ A **skill** is a plain-text markdown document you write. A **tool** is code -- a
 
 **Section label:** Part V
 Write Your First Skill
-Pick one pedagogical move from your course and turn it into a step-by-step recipe.
 
 ---
 
-## Slide 29 -- Choose Your Move (`layout-content`)
+## Slide 29 -- Choose Your Move (`layout-content`, centered)
 
 **Label:** Exercise
 
-Think of one thing you do as an instructor that the model should learn to do. Which of these is closest to the skill you want to build?
+Which of these is closest to the skill you want to build?
 
 - Feedback on Writing
 - Source Analysis
@@ -438,14 +392,14 @@ Think of one thing you do as an instructor that the model should learn to do. Wh
 
 **Label:** Draft It
 
-Use the four-part structure to write a skill for the move you chose.
+Use the four-part structure.
 
-1. **Trigger** -- When does this skill activate? *(step-reveal)*
-2. **Procedure** -- Write 3-5 numbered steps. Include wait points. *(step-reveal)*
-3. **Format** -- What should each response look like? *(step-reveal)*
-4. **Constraints** -- What should the model never do? *(step-reveal)*
+1. **Trigger** *(step-reveal)*
+2. **Procedure** *(step-reveal)*
+3. **Format** *(step-reveal)*
+4. **Constraints** *(step-reveal)*
 
-Full template provided with copy button.
+Full template with copy button.
 
 ---
 
@@ -453,20 +407,18 @@ Full template provided with copy button.
 
 **Label:** Integrate It
 
-Now connect your skill to the model you built in the previous workshops.
+Add the skill to your model.
 
-- **Option A: Append to System Prompt** -- Open your model card in Workspace → Models. Paste the skill at the end of your system prompt. Save. *(step-reveal)*
-- **Option B: Upload to Knowledge Collection** -- Save your skill as a `.txt` file. Upload to Workspace → Knowledge. *(step-reveal)*
-- **Test it** -- Open a new chat. Trigger the skill with a realistic student input. Does it follow the procedure? *(step-reveal)*
-- **Iterate:** If the model skips steps, add "Stop. Wait for the student." If it dumps everything at once, add "One [X] per turn." *(step-reveal)*
+- **Option A: Attach to Model** -- Use the skill toggle in Workspace → Models. *(step-reveal)*
+- **Option B: Enable Per Chat** -- Click + in the message bar and toggle on. *(step-reveal)*
+- **Test it** -- Open a new chat. Trigger the skill with realistic student input. *(step-reveal)*
+- **Iterate** -- If the model skips steps, add "Stop. Wait for the student." If it dumps everything, add "One [X] per turn." *(step-reveal)*
 
-**Stage:** Diagram showing all three layers (System Prompt + Knowledge Collection + Your Skill) stacking into "Your Complete AI Tool"
+**Stage:** Three layers (System Prompt + Knowledge Collection + Your Skill) → Your Complete AI Tool
 
 ---
 
 ## Slide 32 -- Workshop Complete (`layout-full-dark closing-slide`)
-
-**Label:** Workshop Complete
 
 | Date | Session | Description |
 |------|---------|-------------|
@@ -474,6 +426,6 @@ Now connect your skill to the model you built in the previous workshops.
 | March 23 | Knowledge Collections ✓ | Grounded the model in your course materials |
 | March 30 (Today) | Skills & Tools ✓ | Added step-by-step workflows for specific pedagogical moves |
 
-You now have a custom AI tool with three layers: a system prompt that defines its behavior, a knowledge collection that grounds it in your materials, and skills that teach it the specific moves you make as an instructor. Keep testing, keep iterating, and keep building.
+Three layers: a system prompt that sets behavior, a knowledge collection that grounds it in your materials, and skills that teach it specific moves. Keep testing, keep iterating.
 
 ailab.gc.cuny.edu
