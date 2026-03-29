@@ -109,7 +109,7 @@ body {
 
 .layout-split > .content {
   flex: 0 0 50%;
-  padding: clamp(20px, 3vh, 45px) clamp(24px, 2.5vw, 50px);
+  padding: clamp(16px, 2.5vh, 36px) clamp(24px, 2.5vw, 50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,6 +126,18 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+/* On tall viewports, prevent centered content from floating mid-screen */
+@media (min-height: 900px) {
+  .layout-split > .content {
+    justify-content: flex-start;
+    padding-top: clamp(48px, 8vh, 100px);
+  }
+  .layout-split > .stage {
+    align-items: flex-start;
+    padding-top: clamp(48px, 8vh, 100px);
+  }
 }
 
 /* Full-bleed dark */
