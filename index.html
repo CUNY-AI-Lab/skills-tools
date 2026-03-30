@@ -160,23 +160,31 @@
     <h2>Activating Skills</h2>
     <p style="margin-bottom: 0.8em;">A skill is worth making when the move has a <strong>repeatable structure</strong> (trigger, steps, output shape) that you want the model to follow every time.</p>
     <div class="card card-cyan" style="margin-bottom: 0.5em;">
-      <h4>Toggle in the Model Card</h4>
-      <p>Open <strong>Workspace &rarr; Models</strong>, find your model, and toggle the skill on. It activates automatically in every chat with that model.</p>
+      <h4>1. Create the skill</h4>
+      <p>Go to <strong>Workspace &rarr; Skills</strong> and click <strong>+ New Skill</strong>. Write or paste your skill text.</p>
+    </div>
+    <div class="card" style="margin-bottom: 0.5em;">
+      <h4>2. Add it to your model</h4>
+      <p>Open your model card in <strong>Workspace &rarr; Models</strong>. Scroll to the <strong>Skills</strong> section and toggle the skill on. It activates automatically in every chat with that model.</p>
     </div>
     <div class="card" style="margin-bottom: 0.5em; opacity: 0.55;">
       <h4>Alternative: Paste into System Prompt</h4>
-      <p>You <em>can</em> append skill text to your system prompt, but this crowds the prompt and makes it harder to maintain. Use the toggle above when possible.</p>
+      <p>You <em>can</em> append skill text directly to your system prompt, but this crowds the prompt and makes it harder to maintain.</p>
     </div>
   </div>
   <div class="stage">
     <div class="carousel" data-interval="8000">
       <div class="carousel-item active">
+        <img src="images/5-0.png" alt="Workspace Skills page showing existing skills and the New Skill button">
+        <div class="carousel-caption"><strong>Workspace &rarr; Skills</strong><br>Open Workspace (1), click the Skills tab (2), then <strong>+ New Skill</strong> (3) to create one.</div>
+      </div>
+      <div class="carousel-item">
         <img src="images/5a.png" alt="Workspace Models page showing custom models in the Sandbox">
         <div class="carousel-caption"><strong>Workspace &rarr; Models</strong><br>Open Workspace in the sidebar (1), then click on your model card (2).</div>
       </div>
       <div class="carousel-item">
         <img src="images/5b.png" alt="Model card editor with Skills section highlighted at the bottom">
-        <div class="carousel-caption"><strong>Skills Section</strong><br>Scroll to the bottom of your model card. Toggle skills on to activate them for every chat with this model.</div>
+        <div class="carousel-caption"><strong>Skills Section</strong><br>Scroll to the bottom of your model card. Toggle the skill on to activate it for every chat with this model.</div>
       </div>
       <div class="carousel-dots"></div>
     </div>
