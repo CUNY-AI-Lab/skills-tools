@@ -16,7 +16,7 @@ Workshop 3 of 3 in the CUNY AI Lab Sandbox series ("Customizing Skills & Tools")
 
 ```bash
 open index.html          # Open in default browser
-open index.html#/5       # Jump to slide 5 (0-indexed in hash)
+open index.html#/5       # Jump to slide 6 (0-indexed in hash)
 ```
 
 ## Architecture
@@ -55,41 +55,43 @@ Core presentation framework. Manages slide transitions, step-reveal progressions
 ```
 
 ### Component Patterns
-- **Prompt blocks:** `.prompt-block` with `.prompt-bad` / `.prompt-mid` / `.prompt-good` quality variants
-- **Progression dots:** `.progression-header` with `.progression-dot` (`.dot-bad`, `.dot-mid`, `.dot-good`, `.dot-active`)
+- **Prompt blocks:** `.prompt-block` with `.prompt-mid` / `.prompt-good` quality variants
+- **Progression dots:** `.progression-header` with `.progression-dot` (`.dot-mid`, `.dot-good`, `.dot-active`)
 - **Comparison panels:** `.comparison` container with `.comparison-panel` and step-reveal
 - **Theater diagram:** `.theater-diagram` → `.theater-backstage` + `.theater-curtain` + `.theater-frontstage`
 - **Flow nodes:** `.flow-node` with variants `.flow-prompt`, `.flow-model`, `.flow-student`
-- **Cards:** `.card` with `.card-cyan`, `.card-navy` variants
+- **Cards:** `.card` with `.card-cyan`, `.card-navy` variants; dimmed alternative cards use `opacity: 0.55`
 - **Copy buttons:** `copyTemplate('tpl-id')` function for template copying
+- **Lightbox:** Click-to-expand for `.screenshot-img` and `.carousel-item img`. Requires `#lightbox` overlay in HTML and `js/lightbox.js`.
 
 ### JS Modules
 - `carousel.js` — Image carousels with auto-advance, dot nav, swipe support. `data-sync-steps` attribute links carousel advancement to step reveals.
+- `lightbox.js` — Click-to-expand overlay for screenshots and carousel images. Escape to close, backdrop blur, reduced-motion support.
 - `scrubber.js` — Timeline slider with drag, click, keyboard, and touch support.
 - `tabs.js` — Simple tab switching via `switchTab(event, tabName)`.
+- `widgets.js` — Additional UI widgets.
 
 ### Responsive Strategy
 Viewport-relative units via `clamp()` throughout. Breakpoints at 1024px (tablet) and 768px (mobile) in `responsive.css`. Split layouts stack vertically on mobile. A `@media (min-height: 900px)` rule in `styles.css` shifts `layout-split` content and stage panels to top-aligned on tall viewports to prevent floating-in-whitespace.
 
-## Content Structure (30 slides)
+## Content Structure (28 slides)
 
-- **1–3:** Title, roadmap, refresher activity (verify setup, name one move)
-- **4–6:** What is a skill, why it matters (stasis theory before/after), the gap skills fill
-- **7–9:** Composition example (before → after) — establishing stasis via stasis theory
-- **10–12:** History example (before → after) — vetting a source via the sourcing heuristic
-- **13–15:** Literature example (before → after) — reading the frame via cinematic mise-en-scène
-- **16–20:** Building blocks (anatomy, trigger, procedure, format) with copyable templates
-- **21–23:** Strategy (skills worth building + pitfalls collapsed into one step-reveal slide), where skills live
-- **24–25:** Tools in Open WebUI (before → after pattern, Gemma 3 27B caveat, Kimi K2.5/GLM 5 recommended)
-- **26–30:** Hands-on exercise (choose a move, write the skill, add to model), closing
+- **1–3:** Title, roadmap, pre-flight (verify setup, name one pedagogical move)
+- **4–5:** What is a skill, activating skills (Workspace → Skills → + New Skill, then toggle on in model card; 3-image carousel with screenshots)
+- **6–7:** Why skills matter (stasis theory before/after), the gap skills fill
+- **8–9:** What is a tool (per-chat via controls icon, per-model via model card; built-in vs custom tools; 3-image carousel), skills vs. tools (skill = plain text you write, tool = pre-built code; built-in tools grid)
+- **10–12:** Composition example (before → after) — establishing stasis via stasis theory
+- **13–15:** History example (before → after) — sourcing a primary document via the sourcing heuristic
+- **16–18:** Literature example (before → after) — reading the frame via cinematic mise-en-scène
+- **19–23:** Building blocks (anatomy, trigger, procedure, format) with copyable templates
+- **24–28:** Hands-on exercise (choose a move, write the skill, add to model via Workspace → Skills), closing
 
-**Example progressions** use a 2-dot pattern (before → after) instead of the original 3-dot (bad → mid → good). Each "before" slide shows a mid-quality prompt with a numbered list of gaps revealed on advance. Skills have three components: trigger, procedure, format.
+**Example progressions** use a 2-dot pattern (before → after). Each "before" slide shows a mid-quality prompt with a numbered list of gaps revealed on advance. Skills have three components: trigger, procedure, format.
 
 ## Companion Documents
 
 - `SLIDES.md` — Plain-text mirror of all slide content, synced manually after HTML changes
 - `RESEARCH.md` — Research brief on Open WebUI skills/tools for workshop prep
-- `COLLAPSEME.md` — Proposals for further slide collapses with current→proposed copy tables
 
 ## Shared Assets
 
