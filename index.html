@@ -177,93 +177,7 @@
 </div>
 
 <!-- ==========================================
-     SLIDE 6 — WHAT IS A TOOL?
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 6: What Is a Tool?" data-slide="what-is-tool" tabindex="-1">
-  <div class="content">
-    <span class="label label-blue">Tools in Open WebUI</span>
-    <h2>What Is a Tool?</h2>
-    <p style="margin-bottom: 0.8em;">A <strong>tool</strong> is a function the model can call to do something it can&rsquo;t do with language alone &mdash; search the web, query your uploaded files, run code, or generate an image.</p>
-    <p style="margin-bottom: 0.8em;">Tools live in <strong>Workspace &rarr; Tools</strong>. You can enable them two ways:</p>
-    <div class="card card-cyan" style="margin-bottom: 0.5em;">
-      <h4>Per Chat</h4>
-      <p>Click <strong>+</strong> in the message bar to toggle individual tools on for that conversation.</p>
-    </div>
-    <div class="card" style="margin-bottom: 0.5em;">
-      <h4>Per Model</h4>
-      <p>Attach tools permanently in <strong>Workspace &rarr; Models &rarr; Tools</strong>. Every conversation with that model will have access.</p>
-    </div>
-    <div class="tip-box">
-      <p><strong>Caveat:</strong> Smaller models (e.g. Gemma 3 27B) call tools inconsistently. Use Kimi K2.5 or GLM 5 for reliable tool use.</p>
-    </div>
-  </div>
-  <div class="stage">
-    <!-- Screenshot placeholder: Workspace → Tools page -->
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 7 — SKILLS VS. TOOLS
-     ========================================== -->
-<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide 7: Skills vs. Tools" data-slide="skills-vs-tools" tabindex="-1">
-  <div class="content">
-    <span class="label label-cyan">The Difference</span>
-    <h2>Skills vs. Tools</h2>
-    <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a document you write in plain text: a procedure the model follows. A <strong>tool</strong> is code: a function the model calls. Both extend what your custom model can do, but they work differently.</p>
-    <div class="card card-cyan" style="margin-bottom: 0.5em;">
-      <h4>Skill</h4>
-      <p>You write it. Plain text, no code. Tells the model <em>how</em> to handle a specific pedagogical move step by step.</p>
-    </div>
-    <div class="card" style="margin-bottom: 0.5em;">
-      <h4>Tool</h4>
-      <p>Pre-built or imported. Code that runs behind the scenes. Gives the model abilities it doesn&rsquo;t have on its own &mdash; like searching the web or running a calculation.</p>
-    </div>
-    <div class="tip-box">
-      <p><strong>Today&rsquo;s focus:</strong> Skills. Tools are ready to use out of the box. Skills are what you build.</p>
-    </div>
-  </div>
-  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(24px, 3vh, 40px) clamp(20px, 2.5vw, 36px); justify-content: center;">
-    <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.6vh, 18px); width: 100%; max-width: 480px; margin: 0 auto;">
-      <!-- Skill vs Tool comparison -->
-      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 14px 16px;">
-        <div class="flow-node-label" style="font-size: 1rem; color: var(--accent-cyan);">Skill <span style="font-weight: 400; font-size: 0.85rem; opacity: 0.75;">(plain text)</span></div>
-        <div class="flow-node-desc" style="font-size: 0.85rem;">&ldquo;Walk through stasis one question at a time&rdquo;</div>
-        <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 3px;">You write it &bull; Shapes how the model responds</div>
-      </div>
-      <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
-      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px; padding: 14px 16px;">
-        <div class="flow-node-label" style="font-size: 1rem; color: var(--accent-blue);">Tool <span style="font-weight: 400; font-size: 0.85rem; opacity: 0.75;">(code)</span></div>
-        <div class="flow-node-desc" style="font-size: 0.85rem;">Search the web, query files, run code, generate images</div>
-        <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 3px;">Pre-built &bull; Gives the model new capabilities</div>
-      </div>
-      <!-- Built-in tools grid -->
-      <div style="border-top: 1px solid rgba(59, 111, 181, 0.15); padding-top: clamp(10px, 1.2vh, 16px); margin-top: clamp(4px, 0.6vh, 8px);">
-        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">Built-in tools</div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 10px 12px;">
-            <div style="font-size: 0.85rem; font-weight: 600;">Web Search</div>
-            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Current information</div>
-          </div>
-          <div style="background: white; border: 1px solid rgba(59, 111, 181, 0.25); border-radius: 8px; padding: 10px 12px;">
-            <div style="font-size: 0.85rem; font-weight: 600;">Knowledge Query</div>
-            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Search uploaded files</div>
-          </div>
-          <div style="background: white; border: 1px solid rgba(11, 29, 58, 0.2); border-radius: 8px; padding: 10px 12px;">
-            <div style="font-size: 0.85rem; font-weight: 600;">Code Execution</div>
-            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Run code in a sandbox</div>
-          </div>
-          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 10px 12px;">
-            <div style="font-size: 0.85rem; font-weight: 600;">Image Generation</div>
-            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Create from descriptions</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ==========================================
-     SLIDE 8 — WHY SKILLS MATTER
+     WHY SKILLS MATTER
      ========================================== -->
 <div class="slide layout-content" role="group" aria-roledescription="slide" aria-label="Slide 7: Why Skills Matter" data-slide="why-skills" tabindex="-1">
   <span class="label label-cyan">Why Bother?</span>
@@ -320,9 +234,93 @@
 </div>
 
 <!-- ==========================================
-     SLIDE 7 — SECTION DIVIDER: PART I
+     WHAT IS A TOOL?
      ========================================== -->
-<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide 7: Part I - Skill Examples" data-slide="part1" tabindex="-1">
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide: What Is a Tool?" data-slide="what-is-tool" tabindex="-1">
+  <div class="content">
+    <span class="label label-blue">Tools in Open WebUI</span>
+    <h2>What Is a Tool?</h2>
+    <p style="margin-bottom: 0.8em;">A <strong>tool</strong> is a function the model can call to do something it can&rsquo;t do with language alone &mdash; search the web, query your uploaded files, run code, or generate an image.</p>
+    <p style="margin-bottom: 0.8em;">Tools live in <strong>Workspace &rarr; Tools</strong>. You can enable them two ways:</p>
+    <div class="card card-cyan" style="margin-bottom: 0.5em;">
+      <h4>Per Chat</h4>
+      <p>Click <strong>+</strong> in the message bar to toggle individual tools on for that conversation.</p>
+    </div>
+    <div class="card" style="margin-bottom: 0.5em;">
+      <h4>Per Model</h4>
+      <p>Attach tools permanently in <strong>Workspace &rarr; Models &rarr; Tools</strong>. Every conversation with that model will have access.</p>
+    </div>
+    <div class="tip-box">
+      <p><strong>Caveat:</strong> Smaller models (e.g. Gemma 3 27B) call tools inconsistently. Use Kimi K2.5 or GLM 5 for reliable tool use.</p>
+    </div>
+  </div>
+  <div class="stage">
+    <!-- Screenshot placeholder: Workspace → Tools page -->
+  </div>
+</div>
+
+<!-- ==========================================
+     SKILLS VS. TOOLS
+     ========================================== -->
+<div class="slide layout-split" role="group" aria-roledescription="slide" aria-label="Slide: Skills vs. Tools" data-slide="skills-vs-tools" tabindex="-1">
+  <div class="content">
+    <span class="label label-cyan">The Difference</span>
+    <h2>Skills vs. Tools</h2>
+    <p style="margin-bottom: 0.8em;">A <strong>skill</strong> is a document you write in plain text: a procedure the model follows. A <strong>tool</strong> is code: a function the model calls. Both extend what your custom model can do, but they work differently.</p>
+    <div class="card card-cyan" style="margin-bottom: 0.5em;">
+      <h4>Skill</h4>
+      <p>You write it. Plain text, no code. Tells the model <em>how</em> to handle a specific pedagogical move step by step.</p>
+    </div>
+    <div class="card" style="margin-bottom: 0.5em;">
+      <h4>Tool</h4>
+      <p>Pre-built or imported. Code that runs behind the scenes. Gives the model abilities it doesn&rsquo;t have on its own &mdash; like searching the web or running a calculation.</p>
+    </div>
+    <div class="tip-box">
+      <p><strong>Today&rsquo;s focus:</strong> Skills. Tools are ready to use out of the box. Skills are what you build.</p>
+    </div>
+  </div>
+  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(24px, 3vh, 40px) clamp(20px, 2.5vw, 36px); justify-content: center;">
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.6vh, 18px); width: 100%; max-width: 480px; margin: 0 auto;">
+      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 14px 16px;">
+        <div class="flow-node-label" style="font-size: 1rem; color: var(--accent-cyan);">Skill <span style="font-weight: 400; font-size: 0.85rem; opacity: 0.75;">(plain text)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.85rem;">&ldquo;Walk through stasis one question at a time&rdquo;</div>
+        <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 3px;">You write it &bull; Shapes how the model responds</div>
+      </div>
+      <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
+      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px; padding: 14px 16px;">
+        <div class="flow-node-label" style="font-size: 1rem; color: var(--accent-blue);">Tool <span style="font-weight: 400; font-size: 0.85rem; opacity: 0.75;">(code)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.85rem;">Search the web, query files, run code, generate images</div>
+        <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 3px;">Pre-built &bull; Gives the model new capabilities</div>
+      </div>
+      <div style="border-top: 1px solid rgba(59, 111, 181, 0.15); padding-top: clamp(10px, 1.2vh, 16px); margin-top: clamp(4px, 0.6vh, 8px);">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">Built-in tools</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Web Search</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Current information</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(59, 111, 181, 0.25); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Knowledge Query</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Search uploaded files</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(11, 29, 58, 0.2); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Code Execution</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Run code in a sandbox</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Image Generation</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Create from descriptions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================
+     SECTION DIVIDER: PART I
+     ========================================== -->
+<div class="slide layout-divider" role="group" aria-roledescription="slide" aria-label="Slide: Part I - Skill Examples" data-slide="part1" tabindex="-1">
   <span class="section-label">Example 1</span>
   <h2>Establishing Stasis</h2>
   <p class="divider-sub">Composition &mdash; Stasis Theory</p>
