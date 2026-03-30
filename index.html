@@ -197,28 +197,8 @@
       <p><strong>Caveat:</strong> Smaller models (e.g. Gemma 3 27B) call tools inconsistently. Use Kimi K2.5 or GLM 5 for reliable tool use.</p>
     </div>
   </div>
-  <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(24px, 3vh, 40px) clamp(20px, 2.5vw, 36px); justify-content: center;">
-    <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 480px; margin: 0 auto;">
-      <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">Built-in tools</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 12px 14px;">
-          <div style="font-size: 0.92rem; font-weight: 600;">Web Search</div>
-          <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Current information beyond your uploads</div>
-        </div>
-        <div style="background: white; border: 1px solid rgba(59, 111, 181, 0.25); border-radius: 8px; padding: 12px 14px;">
-          <div style="font-size: 0.92rem; font-weight: 600;">Knowledge Query</div>
-          <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Search uploaded files by content</div>
-        </div>
-        <div style="background: white; border: 1px solid rgba(11, 29, 58, 0.2); border-radius: 8px; padding: 12px 14px;">
-          <div style="font-size: 0.92rem; font-weight: 600;">Code Execution</div>
-          <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Run code in a sandbox</div>
-        </div>
-        <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 12px 14px;">
-          <div style="font-size: 0.92rem; font-weight: 600;">Image Generation</div>
-          <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">Create images from descriptions</div>
-        </div>
-      </div>
-    </div>
+  <div class="stage">
+    <!-- Screenshot placeholder: Workspace → Tools page -->
   </div>
 </div>
 
@@ -244,16 +224,39 @@
   </div>
   <div class="stage" style="background: var(--bg-light); flex-direction: column; padding: clamp(24px, 3vh, 40px) clamp(20px, 2.5vw, 36px); justify-content: center;">
     <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.6vh, 18px); width: 100%; max-width: 480px; margin: 0 auto;">
-      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 16px 18px;">
-        <div class="flow-node-label" style="font-size: 1.05rem; color: var(--accent-cyan);">Skill <span style="font-weight: 400; font-size: 0.88rem; opacity: 0.75;">(plain text)</span></div>
-        <div class="flow-node-desc" style="font-size: 0.9rem;">&ldquo;Walk through stasis one question at a time&rdquo;</div>
-        <div class="flow-node-desc" style="font-size: 0.78rem; opacity: 0.6; margin-top: 4px;">You write it &bull; Shapes how the model responds</div>
+      <!-- Skill vs Tool comparison -->
+      <div class="flow-node" style="width: 100%; background: rgba(78, 205, 196, 0.06); border: 2px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 14px 16px;">
+        <div class="flow-node-label" style="font-size: 1rem; color: var(--accent-cyan);">Skill <span style="font-weight: 400; font-size: 0.85rem; opacity: 0.75;">(plain text)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.85rem;">&ldquo;Walk through stasis one question at a time&rdquo;</div>
+        <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 3px;">You write it &bull; Shapes how the model responds</div>
       </div>
-      <div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
-      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px; padding: 16px 18px;">
-        <div class="flow-node-label" style="font-size: 1.05rem; color: var(--accent-blue);">Tool <span style="font-weight: 400; font-size: 0.88rem; opacity: 0.75;">(code)</span></div>
-        <div class="flow-node-desc" style="font-size: 0.9rem;">Search the web, query files, run code, generate images</div>
-        <div class="flow-node-desc" style="font-size: 0.78rem; opacity: 0.6; margin-top: 4px;">Pre-built &bull; Gives the model new capabilities</div>
+      <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">vs.</div>
+      <div class="flow-node" style="width: 100%; background: rgba(59, 111, 181, 0.06); border: 2px solid rgba(59, 111, 181, 0.3); border-radius: 12px; padding: 14px 16px;">
+        <div class="flow-node-label" style="font-size: 1rem; color: var(--accent-blue);">Tool <span style="font-weight: 400; font-size: 0.85rem; opacity: 0.75;">(code)</span></div>
+        <div class="flow-node-desc" style="font-size: 0.85rem;">Search the web, query files, run code, generate images</div>
+        <div class="flow-node-desc" style="font-size: 0.72rem; opacity: 0.6; margin-top: 3px;">Pre-built &bull; Gives the model new capabilities</div>
+      </div>
+      <!-- Built-in tools grid -->
+      <div style="border-top: 1px solid rgba(59, 111, 181, 0.15); padding-top: clamp(10px, 1.2vh, 16px); margin-top: clamp(4px, 0.6vh, 8px);">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">Built-in tools</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Web Search</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Current information</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(59, 111, 181, 0.25); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Knowledge Query</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Search uploaded files</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(11, 29, 58, 0.2); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Code Execution</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Run code in a sandbox</div>
+          </div>
+          <div style="background: white; border: 1px solid rgba(78, 205, 196, 0.25); border-radius: 8px; padding: 10px 12px;">
+            <div style="font-size: 0.85rem; font-weight: 600;">Image Generation</div>
+            <div style="font-size: 0.75rem; opacity: 0.75; margin-top: 2px;">Create from descriptions</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
