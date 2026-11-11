@@ -1,5 +1,7 @@
 # Customizing Skills & Tools — CUNY AI Lab
 
+> **Archival note.** This repository preserves the workshop as delivered in Spring 2026 as part of the series *Using the CAIL Sandbox in the Classroom*. A revised version, [*Configuring Skills and Tools*](https://cuny-ai-lab.github.io/sandbox-series/skills/), forms part of the CUNY AI Lab's Fall 2026 [Sandbox Workshop Series](https://cuny-ai-lab.github.io/sandbox-series/). Readers seeking current materials should consult that version; the tools, models, and procedures described here may no longer reflect the Lab's practice.
+
 Live: <https://cuny-ai-lab.github.io/skills-tools/>
 
 ## License
